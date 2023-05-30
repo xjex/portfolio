@@ -5,7 +5,6 @@ import "./index.css";
 
 import App from "./App";
 import Landing from "./Components/landing";
-
 const router = createBrowserRouter([
   {
     path: "/",
