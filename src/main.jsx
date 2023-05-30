@@ -6,6 +6,7 @@ import "./index.css";
 import Error from "./Components/Error";
 import App from "./App";
 import Landing from "./Components/Landing";
+import Contact from "./Components/Contact";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -35,7 +36,7 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
+    <Contact />
     <RouterProvider router={router} />
   </React.StrictMode>
 );

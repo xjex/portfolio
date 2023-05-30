@@ -4,12 +4,11 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import Home from "./Home";
 import Nav from "./Components/Nav";
-import EmailButton from "./Components/EmailButton";
+
 function App() {
   return (
     <>
       <Nav />
-      <EmailButton />
     </>
   );
 }
