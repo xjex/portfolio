@@ -21,6 +21,7 @@ const Contact = () => {
     const form = event.target;
     if (!form.checkValidity()) {
       form.reportValidity();
+
       return;
     }
 
@@ -29,6 +30,7 @@ const Contact = () => {
     formData.forEach((value, key) => {
       object[key] = value;
     });
+    console.log(object);
     const json = JSON.stringify(object);
 
     form.reset();
@@ -46,6 +48,7 @@ const Contact = () => {
         let json = await response.json();
         if (response.status === 200) {
           console.log("Success:", json.message);
+          alert("Success:", json.message);
         } else {
           console.error("Error:", json.message);
         }
@@ -86,13 +89,19 @@ const Contact = () => {
             <input
               type="hidden"
               name="subject"
-              value="New Submission from Web3Forms"
+              value="New Submission from your Portfolio Website"
             />
             <input
               type="checkbox"
               name="botcheck"
               style={{ display: "none" }}
             />
+
+            <input
+              type="hidden"
+              name="from_name"
+              value="Portfolio User Message"
+            ></input>
 
             <div class="mb-4">
               <label
@@ -168,9 +177,11 @@ const Contact = () => {
               <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
                 Please provide a message.
               </div>
-            </div>
 
-            <div class="mb-4">
+              <div class="mb-4"></div>
+
+              <div class="mb-4"></div>
+
               <button
                 type="submit"
                 class="w-full px-3 py-4 text-white bg-indigo-500 rounded-md focus:bg-indigo-600 focus:outline-none"

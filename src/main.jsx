@@ -7,6 +7,7 @@ import Error from "./Components/Error";
 import App from "./App";
 import Landing from "./Components/Landing";
 import Contact from "./Components/Contact";
+import Alert from "./Components/Alert";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -37,6 +38,7 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Contact />
+    <Alert />
     <RouterProvider router={router} />
   </React.StrictMode>
 );
