@@ -3,8 +3,9 @@ import * as ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 
+import Error from "./Components/Error";
 import App from "./App";
-import Landing from "./Components/landing";
+import Landing from "./Components/Landing";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
   {
     path: "/resume",
     element: <div>Resume</div>,
+  },
+  {
+    path: "*",
+    element: <Error />,
   },
 ]);
 

@@ -1,6 +1,9 @@
 import React from "react";
 import { FaLinkedin, FaTwitter, FaGithub, FaFacebook } from "react-icons/fa";
 import profileimg from "./assets/profileimage.jpg";
+import Nav from "./Components/Nav";
+import { Link } from "react-router-dom";
+
 const Home = () => {
   return (
     <div class="flex items-center justify-center h-screen bg-gradient-to-br from-blue-500 to-red-700">
@@ -12,20 +15,15 @@ const Home = () => {
         <h1 class="text-lg text-gray-700"> Xavier Joseph Manaloto </h1>
         <h3 class="text-sm text-gray-500 "> Technical Content Creator </h3>
         <h3 class="text-sm text-gray-400 "> StackTrek </h3>
-
         <p class="text-xs text-gray-400 mt-4">
           {" "}
           I create and manage technical contents{" "}
         </p>
-
         <p class="text-xs text-gray-400 "> I am a full stack developer </p>
 
         {/* contact me */}
-        <button
-          class=" transition ease-in-out delay-150 bg-indigo-600 px-8 py-2 mt-8 rounded-2xl text-gray-100 font-semibold uppercase tracking-wide   hover:scale-110 duration-100"
-          href="/contact"
-        >
-          Hire Me
+        <button class=" transition ease-in-out delay-150 bg-indigo-600 px-8 py-2 mt-8 rounded-2xl text-gray-100 font-semibold uppercase tracking-wide   hover:scale-110 duration-100">
+          <Link to="/contact">Contact Me</Link>
         </button>
 
         {/* line */}
@@ -34,9 +32,7 @@ const Home = () => {
           <p class="text-xs text-gray-400 mx-2"> Socials </p>
           <div class="border-t border-gray-300 w-16"></div>
         </div>
-
         {/* Socials */}
-
         <ul class="flex items-center justify-center mt-4 space-x-4">
           <li class="transition ease-in-out delay-150 rounded-3xl bg-blue-500 hover:-translate-y-1  hover:bg-indigo-500 duration-300 ...">
             <a
