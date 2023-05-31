@@ -67,8 +67,8 @@ const Nav = () => {
   }, []);
 
   return (
-    <div class="bg-blue-500">
-      <nav class="relative px-4 py-4 flex justify-between items-center bg-white">
+    <div class="bg-gray-700">
+      <nav class="relative px-4 py-4 flex justify-between items-center bg-white rounded-b-lg ">
         <a class="text-3xl font-bold leading-none" href="#">
           <svg class="h-10" alt="logo" viewBox="0 0 10240 10240">
             <path
@@ -112,8 +112,8 @@ const Nav = () => {
             </svg>
           </li>
           <li>
-            <a class="text-sm text-gray-400 hover:text-gray-500" href="/about">
-              About Us
+            <a class="text-sm text-gray-400 hover:text-gray-500" href="/blogs">
+              Blogs
             </a>
           </li>
           <li class="text-gray-300">
@@ -230,9 +230,9 @@ const Nav = () => {
               <li class="mb-1">
                 <a
                   class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
-                  href="/about"
+                  href="/blogs"
                 >
-                  About Us
+                  Blogs
                 </a>
               </li>
               <li class="mb-1">

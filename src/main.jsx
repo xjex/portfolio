@@ -9,6 +9,8 @@ import Landing from "./Components/Landing";
 import Contact from "./Components/Contact";
 import Alert from "./Components/Alert";
 import { Analytics } from "@vercel/analytics/react";
+import Blog from "./Blog";
+import Nav from "./Components/Nav";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +34,10 @@ const router = createBrowserRouter([
     element: <div>Resume</div>,
   },
   {
+    path: "/blogs",
+    element: <Blog />,
+  },
+  {
     path: "*",
     element: <Error />,
   },
@@ -41,7 +47,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Analytics />
     <Contact />
-    <Alert />
+
     <RouterProvider router={router} />
   </React.StrictMode>
 );
