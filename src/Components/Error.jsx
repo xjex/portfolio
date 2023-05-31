@@ -20,15 +20,5 @@ const Error = () => {
   );
 };
 
-const EmailButton = () => {
-  return (
-    <div class="items-center text-center">
-      <button
-        id="w3f__widget--button"
-        class="fixed bottom-5 right-5 z-50 w-14 h-14 bg-indigo-600 rounded-full shadow-lg focus:outline-none"
-        onClick={() => setOpen(!open)}
-      ></button>
-    </div>
-  );
-};
+
 export default Error;

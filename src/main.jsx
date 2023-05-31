@@ -8,6 +8,8 @@ import App from "./App";
 import Landing from "./Components/Landing";
 import Contact from "./Components/Contact";
 import Alert from "./Components/Alert";
+import { Analytics } from "@vercel/analytics/react";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -37,6 +39,7 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
+    <Analytics />
     <Contact />
     <Alert />
     <RouterProvider router={router} />

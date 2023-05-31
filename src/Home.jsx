@@ -1,14 +1,12 @@
 import React from "react";
 import { FaLinkedin, FaTwitter, FaGithub, FaFacebook } from "react-icons/fa";
 import profileimg from "./assets/profileimage.jpg";
-import Nav from "./Components/Nav";
+
 import { Link } from "react-router-dom";
-import { Analytics } from "@vercel/analytics/react";
 
 const Home = () => {
   return (
     <div class="flex items-center justify-center h-screen bg-gradient-to-br from-blue-500 to-red-700">
-      <Analytics />
       <div class="bg-white font-semibold text-center rounded-3xl border shadow-lg p-10 max-w-xs">
         <img
           class="mb-3 w-32 h-32 rounded-full shadow-lg mx-auto"
