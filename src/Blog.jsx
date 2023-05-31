@@ -4,6 +4,12 @@ import supabase from "./lib/helper/supabaseClient";
 const Blog = () => {
   const [fetchError, setFetchError] = useState(null);
   const [posts, setPosts] = useState(null);
+
+  const formatDate = (date) => {
+    const newDate = new Date(date);
+    return newDate.toDateString();
+  };
+
   useEffect(() => {
     const fetchPosts = async () => {
       const { data, error } = await supabase.from("Post").select();
@@ -13,12 +19,22 @@ const Blog = () => {
         console.log(error);
       }
       if (data) {
-        setPosts(data);
+        const responseData = data.map((post) => {
+          return {
+            id: post.id,
+            title: post.title,
+            description: post.description,
+            created_at: formatDate(post.created_at),
+          };
+        });
+        setPosts(responseData);
+
         setFetchError(null);
       }
     };
     fetchPosts();
   }, []);
+  console.log(posts);
 
   return (
     <div class=" bg-slate-600">
@@ -27,42 +43,52 @@ const Blog = () => {
         {fetchError && <div>{fetchError}</div>}
         {posts === null && <div>Loading...</div>}
 
-        {posts &&
-          posts.map((post) => {
-            return (
-              <div class="space-x-2">
-                <div
-                  key={post.id}
-                  class="bg-white shadow-md border  border-gray-200  rounded-lg max-w-sm mb-5"
-                >
-                  <a href="#">
-                    <img
-                      class="rounded-t-lg"
-                      //   src = {post.image}
-                      src="https://flowbite.com/docs/images/blog/image-1.jpg"
-                      alt=""
-                    />
-                  </a>
-                  <div class="p-5">
-                    <a href="#">
-                      <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2">
-                        {post.title}
-                      </h5>
-                    </a>
-                    <p class="font-normal text-gray-700 mb-3">
-                      {post.description}
-                    </p>
+        <div class=" grid grid-cols-1 gap-x-4 gap-y-8  md:grid-cols-2 lg:grid-cols-4 ">
+          {posts &&
+            posts.map((post) => {
+              return (
+                <div>
+                  <article
+                    key={post.id}
+                    class="bg-white shadow-md border  border-gray-200  rounded-lg max-w-sm mb-5"
+                  >
                     <a
-                      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center"
+                      rel="noopener noreferrer"
                       href="#"
+                      aria-label="Te nulla oportere reprimique his dolorum"
                     >
-                      Read more
+                      <img
+                        alt=""
+                        class="object-cover w-full h-52 dark:bg-gray-500 rounded-lg"
+                        src="https://source.unsplash.com/200x200/?fashion?3"
+                      />
                     </a>
-                  </div>
+                    <div class="flex flex-col flex-1 p-6">
+                      <a
+                        rel="noopener noreferrer"
+                        href="#"
+                        aria-label="Te nulla oportere reprimique his dolorum"
+                      ></a>
+                      <a
+                        rel="noopener noreferrer"
+                        href="#"
+                        class="text-xs tracking-wider uppercase hover:underline dark:text-violet-400"
+                      >
+                        {post.title}
+                      </a>
+                      <h3 class="flex-1 py-2 text-lg font-semibold leading-snug">
+                        {post.description}
+                      </h3>
+                      <div class="flex flex-wrap justify-between pt-3 space-x-2 text-xs dark:text-gray-400">
+                        <span>{post.created_at}</span>
+                        <span>2.3K views</span>
+                      </div>
+                    </div>
+                  </article>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+        </div>
       </div>
     </div>
   );
