@@ -2,7 +2,6 @@ import React, { Component, useRef, useEffect } from "react";
 import { FaLinkedin, FaTwitter, FaGithub, FaFacebook } from "react-icons/fa";
 import profileimg from "./assets/profileimage.jpg";
 import { Link } from "react-router-dom";
-import Timeline from "./Components/timeline";
 
 const Home = () => {
   const handleClickScroll = () => {
