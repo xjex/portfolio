@@ -2,6 +2,7 @@ import React from "react";
 import Home from "../Home";
 import Blog from "../Blog";
 import Timeline from "./timeline";
+import Footers from "./Footers";
 const Landing = () => {
   return (
     <div class=" bg-gradient-to-br from-blue-500 to-red-700">
@@ -10,6 +11,7 @@ const Landing = () => {
         <Timeline />
       </div>
       <Blog />
+      <Footers />
     </div>
   );
 };
