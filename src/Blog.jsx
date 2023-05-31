@@ -78,7 +78,7 @@ const Blog = () => {
                 <div>
                   <article
                     key={post.id}
-                    class="bg-white shadow-md border  border-gray-200  rounded-lg max-w-sm mb-5"
+                    class="bg-white shadow-md border transform transition cursor-pointer  hover:-translate-y-3 border-gray-200  rounded-lg max-w-sm mb-5"
                   >
                     <a
                       rel="noopener noreferrer"
