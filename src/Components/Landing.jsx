@@ -1,7 +1,7 @@
 import React from "react";
 import Home from "../Home";
 import Blog from "../Blog";
-import Timeline from "./timeline";
+import Timeline from "./Timeline";
 import Footers from "./Footers";
 const Landing = () => {
   return (
