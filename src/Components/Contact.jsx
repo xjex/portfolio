@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FaFacebookMessenger } from "react-icons/fa";
 import { IconContext } from "react-icons";
 import { FaEnvelope, FaTimes } from "react-icons/fa";
+import Alert from "./Alert";
 const Contact = () => {
   //icon context
   const [isClicked, setIsClicked] = useState(false);
@@ -13,6 +14,7 @@ const Contact = () => {
       setIsClicked(false);
     }
   };
+
   const [open, setOpen] = useState(false);
 
   const handleSubmit = (event) => {
@@ -21,7 +23,6 @@ const Contact = () => {
     const form = event.target;
     if (!form.checkValidity()) {
       form.reportValidity();
-
       return;
     }
 
@@ -70,7 +71,6 @@ const Contact = () => {
       >
         <div class="flex p-5 flex-col justify-center items-center h-32 bg-indigo-600">
           <h3 class="text-lg text-white">How can I help?</h3>
-          <p class="text-white opacity-50">I usually respond in a few hours</p>
         </div>{" "}
         <div class="bg-gray-50 flex-grow p-6">
           <form
@@ -167,7 +167,7 @@ const Contact = () => {
                 Message
               </label>
               <textarea
-                rows="5"
+                rows="2"
                 name="message"
                 id="message"
                 placeholder="Your Message"

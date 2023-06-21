@@ -1,6 +1,6 @@
 import React, { Component, useRef, useEffect } from "react";
 import { FaLinkedin, FaTwitter, FaGithub, FaFacebook } from "react-icons/fa";
-import profileimg from "./assets/profileimage.jpg";
+import profileimg from "./assets/Profile2.png";
 import { Link } from "react-router-dom";
 
 const Home = () => {
@@ -16,7 +16,7 @@ const Home = () => {
       <div class=" h-full items-center justify-center flex flex-col ">
         <div class="bg-white font-semibold text-center rounded-3xl border shadow-lg p-10 max-w-xs ">
           <img
-            class="mb-3 w-32 h-32 rounded-full shadow-lg mx-auto"
+            class="mb-3 w-50 h-50 rounded-full shadow-lg mx-auto scale-100"
             src={profileimg}
           />
           <h1 class="text-lg text-gray-700"> Xavier Joseph Manaloto </h1>
@@ -81,7 +81,7 @@ const Home = () => {
           </ul>
         </div>
         <div class="p-20">
-          <button class="rounded-3xl" onClick={handleClickScroll}>
+          <button class="rounded-3xl " onClick={handleClickScroll}>
             <svg
               class="animate-bounce w-6 h-6 text-white"
               fill="none"

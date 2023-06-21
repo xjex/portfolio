@@ -4,8 +4,8 @@ const Timeline = () => {
   return (
     <div class="w-10/12 md:w-7/12 lg:6/12 mx-auto relative py-20  ">
       <h1 class="text-3xl text-center font-bold text-white">Timeline ⌚</h1>
-      <div class="bg-slate-200 p-10 rounded-3xl mt-10">
-        <div class="border-l-2 mt-10">
+      <div class="bg-white p-10 rounded-3xl mt-10">
+        <div class="border-l-2 mt-10 ">
           {/* <!-- Card 1 --> */}
           <div class="transform transition cursor-pointer hover:-translate-y-2 ml-10 relative flex items-center px-6 py-4 bg-blue-600 text-white rounded-2xl mb-10 flex-col md:flex-row space-y-4 md:space-y-0">
             {/* <!-- Dot Follwing the Left Vertical Line --> */}
@@ -17,12 +17,13 @@ const Timeline = () => {
             {/* <!-- Content that showing in the box --> */}
             <div class="flex-auto">
               <h1 class="text-lg">May 31, 2021 - Present </h1>
-              <h1 class="text-xl font-bold">
-                Started Working as Technical Content Creator
-              </h1>
+              <h1 class="text-xl font-bold">Technical Content Creator</h1>
               <h3>StackTrek</h3>
             </div>
-            <p class="text-center text-white hover:text-gray-300"> Present</p>
+            <span class=" bg-green-500 text-gray-900 text-sm font-medium mr-2 px-2.5 py-0.5 rounded">
+              Present
+            </span>
+
             {/* <a href="#" class="text-center text-white hover:text-gray-300">
             Download materials
           </a> */}
