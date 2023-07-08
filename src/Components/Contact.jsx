@@ -7,6 +7,8 @@ const Contact = () => {
   //icon context
   const [isClicked, setIsClicked] = useState(false);
 
+  const env = import.meta.env;
+
   const handleClick = () => {
     if (!isClicked) {
       setIsClicked(true);
@@ -31,7 +33,7 @@ const Contact = () => {
     formData.forEach((value, key) => {
       object[key] = value;
     });
-    console.log(object);
+    //console.log(object);
     const json = JSON.stringify(object);
 
     form.reset();
@@ -49,7 +51,7 @@ const Contact = () => {
         let json = await response.json();
         if (response.status === 200) {
           console.log("Success:", json.message);
-          alert("Success:", json.message);
+          alert("Success:" + json.message);
         } else {
           console.error("Error:", json.message);
         }
@@ -84,7 +86,7 @@ const Contact = () => {
             <input
               type="hidden"
               name="apikey"
-              value="cc5ac182-1b05-4aaa-a8b5-3c11fbfb38de"
+              value={env.VITE_WEB3FORMS_API_KEY}
             />
             <input
               type="hidden"
@@ -118,9 +120,6 @@ const Contact = () => {
                 required
                 class="hover:ea w-full px-3 py-2 bg-white placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
               />
-              <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
-                Please provide your full name.
-              </div>
             </div>
 
             <div class="mb-4">
@@ -138,9 +137,9 @@ const Contact = () => {
                 required
                 class="w-full px-3 py-2 bg-white placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
               />
-              <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
+              {/* <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
                 Please provide a valid email address.
-              </div>
+              </div> */}
             </div>
 
             <div class="mb-4">
@@ -174,9 +173,9 @@ const Contact = () => {
                 required
                 class="w-full px-3 py-2 bg-white placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
               ></textarea>
-              <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
+              {/* <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
                 Please provide a message.
-              </div>
+              </div> */}
 
               <div class="mb-4"></div>
 
