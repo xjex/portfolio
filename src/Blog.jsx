@@ -25,6 +25,8 @@ const Blog = () => {
             title: post.title,
             description: post.description,
             created_at: formatDate(post.created_at),
+            view: post.views,
+            href: `/blogs/content/?id=${post.id}`,
           };
         });
         setPosts(responseData);
@@ -82,7 +84,7 @@ const Blog = () => {
                   >
                     <a
                       rel="noopener noreferrer"
-                      href="#"
+                      href={post.href}
                       aria-label="Te nulla oportere reprimique his dolorum"
                     >
                       <img
@@ -94,12 +96,12 @@ const Blog = () => {
                     <div class="flex flex-col flex-1 p-6">
                       <a
                         rel="noopener noreferrer"
-                        href="#"
+                        href={post.href}
                         aria-label="Te nulla oportere reprimique his dolorum"
                       ></a>
                       <a
                         rel="noopener noreferrer"
-                        href="#"
+                        href={post.href}
                         class="text-xs tracking-wider uppercase hover:underline dark:text-violet-400"
                       >
                         {post.title}
@@ -109,7 +111,7 @@ const Blog = () => {
                       </h3>
                       <div class="flex flex-wrap justify-between pt-3 space-x-2 text-xs dark:text-gray-400">
                         <span>{post.created_at}</span>
-                        <span>2.3K views</span>
+                        <span>{post.view} view</span>
                       </div>
                     </div>
                   </article>

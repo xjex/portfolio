@@ -11,6 +11,7 @@ import Alert from "./Components/Alert";
 import { Analytics } from "@vercel/analytics/react";
 import Blog from "./Blog";
 import Nav from "./Components/Nav";
+import BlogContent from "./BlogContent";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,7 @@ const router = createBrowserRouter([
     path: "*",
     element: <Error />,
   },
+  { path: "/blogs/content/*", element: <BlogContent /> },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
