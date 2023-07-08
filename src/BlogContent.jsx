@@ -11,6 +11,44 @@ const BlogContent = () => {
   const [blog, setBlog] = useState(null);
   const [isFetching, setIsFetching] = useState(false);
 
+  const formatDate = (date) => {
+    const acceptedDate = new Date(date);
+    const currentDate = new Date();
+
+    const timeDifference = currentDate.getTime() - acceptedDate.getTime();
+    const seconds = Math.floor(timeDifference / 1000);
+    const minutes = Math.floor(seconds / 60);
+    const hours = Math.floor(minutes / 60);
+    const days = Math.floor(hours / 24);
+    const weeks = Math.floor(days / 7);
+    const months = Math.floor(days / 30);
+    const years = Math.floor(days / 365);
+
+    if (seconds < 60) {
+      return seconds + (seconds === 1 ? " second ago" : " seconds ago");
+    } else if (minutes < 60) {
+      return minutes + (minutes === 1 ? " minute ago" : " minutes ago");
+    } else if (hours < 24) {
+      return hours + (hours === 1 ? " hour ago" : " hours ago");
+    } else if (days < 7) {
+      return days + (days === 1 ? " day ago" : " days ago");
+    } else if (weeks < 4) {
+      return weeks + (weeks === 1 ? " week ago" : " weeks ago");
+    } else if (months < 12) {
+      return months + (months === 1 ? " month ago" : " months ago");
+    } else {
+      const remainingMonths = months % 12;
+      const yearsText = years === 1 ? " year" : " years";
+      const monthsText = remainingMonths === 1 ? " month" : " months";
+      return (
+        years +
+        yearsText +
+        (remainingMonths > 0 ? " and " + remainingMonths + monthsText : "") +
+        " ago"
+      );
+    }
+  };
+
   useEffect(() => {
     const getBlog = async () => {
       try {
@@ -27,7 +65,7 @@ const BlogContent = () => {
               id: post.id,
               title: post.title,
               description: post.description,
-              created_at: post.created_at,
+              created_at: formatDate(post.created_at),
               view: post.views,
               content: post.content,
               votes: post.votes,
@@ -107,12 +145,17 @@ const BlogContent = () => {
 
   return (
     <div className="h-screen bg-gray-700 ">
+      <div className="flex justify-center items-center">
+        <h1 className="text-4xl font-bold text-white mt-10 mb-5">
+          {blog !== null && blog.title}
+        </h1>
+      </div>
+
       {blog === null && (
         <div className="flex justify-center items-center h-full">
           <div className=" animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-white"></div>
         </div>
       )}
-
       {blog !== null && (
         <div className=" flex justify-center items-center">
           {/* card */}
@@ -129,7 +172,7 @@ const BlogContent = () => {
               {/* time/date */}
               <div className="flex-col justify mb-5">
                 <h1 className="ml-3 font-bold">John Doe</h1>
-                <p className="ml-3 text-xs">10 hrs</p>
+                <p className="ml-3 text-xs">{blog.created_at}</p>
               </div>
             </div>
 
