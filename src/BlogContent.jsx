@@ -144,7 +144,7 @@ const BlogContent = () => {
   }, [votes]);
 
   return (
-    <div className="h-screen bg-gray-700 ">
+    <div className="h-full bg-gray-700 ">
       <div className="flex justify-center items-center">
         <h1 className="text-4xl font-bold text-white mt-10 mb-5">
           {blog !== null && blog.title}
@@ -171,7 +171,7 @@ const BlogContent = () => {
               </div>
               {/* time/date */}
               <div className="flex-col justify mb-5">
-                <h1 className="ml-3 font-bold">John Doe</h1>
+                <h1 className="ml-3 font-bold">Xavier Joseph Manaloto</h1>
                 <p className="ml-3 text-xs">{blog.created_at}</p>
               </div>
             </div>
