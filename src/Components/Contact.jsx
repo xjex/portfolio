@@ -2,9 +2,12 @@ import { useState } from "react";
 import { FaFacebookMessenger } from "react-icons/fa";
 import { IconContext } from "react-icons";
 import { FaEnvelope, FaTimes } from "react-icons/fa";
+import Alert from "./Alert";
 const Contact = () => {
   //icon context
   const [isClicked, setIsClicked] = useState(false);
+
+  const env = import.meta.env;
 
   const handleClick = () => {
     if (!isClicked) {
@@ -13,6 +16,7 @@ const Contact = () => {
       setIsClicked(false);
     }
   };
+
   const [open, setOpen] = useState(false);
 
   const handleSubmit = (event) => {
@@ -29,6 +33,7 @@ const Contact = () => {
     formData.forEach((value, key) => {
       object[key] = value;
     });
+    //console.log(object);
     const json = JSON.stringify(object);
 
     form.reset();
@@ -45,7 +50,8 @@ const Contact = () => {
       .then(async (response) => {
         let json = await response.json();
         if (response.status === 200) {
-          console.log("Success:", json.message);
+          console.log("Success: ", json.message);
+          alert("Success:" + json.message);
         } else {
           console.error("Error:", json.message);
         }
@@ -66,8 +72,7 @@ const Contact = () => {
         }
       >
         <div class="flex p-5 flex-col justify-center items-center h-32 bg-indigo-600">
-          <h3 class="text-lg text-white">How can I help?</h3>
-          <p class="text-white opacity-50">I usually respond in a few hours</p>
+          <h3 class="text-lg text-white">Talk To Me</h3>
         </div>{" "}
         <div class="bg-gray-50 flex-grow p-6">
           <form
@@ -81,18 +86,24 @@ const Contact = () => {
             <input
               type="hidden"
               name="apikey"
-              value="cc5ac182-1b05-4aaa-a8b5-3c11fbfb38de"
+              value={env.VITE_WEB3FORMS_API_KEY}
             />
             <input
               type="hidden"
               name="subject"
-              value="New Submission from Web3Forms"
+              value="New Submission from your Portfolio Website"
             />
             <input
               type="checkbox"
               name="botcheck"
               style={{ display: "none" }}
             />
+
+            <input
+              type="hidden"
+              name="from_name"
+              value="Portfolio User Message"
+            ></input>
 
             <div class="mb-4">
               <label
@@ -109,9 +120,6 @@ const Contact = () => {
                 required
                 class="hover:ea w-full px-3 py-2 bg-white placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
               />
-              <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
-                Please provide your full name.
-              </div>
             </div>
 
             <div class="mb-4">
@@ -129,9 +137,9 @@ const Contact = () => {
                 required
                 class="w-full px-3 py-2 bg-white placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
               />
-              <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
+              {/* <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
                 Please provide a valid email address.
-              </div>
+              </div> */}
             </div>
 
             <div class="mb-4">
@@ -158,19 +166,21 @@ const Contact = () => {
                 Message
               </label>
               <textarea
-                rows="5"
+                rows="2"
                 name="message"
                 id="message"
                 placeholder="Your Message"
                 required
                 class="w-full px-3 py-2 bg-white placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
               ></textarea>
-              <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
+              {/* <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
                 Please provide a message.
-              </div>
-            </div>
+              </div> */}
 
-            <div class="mb-4">
+              <div class="mb-4"></div>
+
+              <div class="mb-4"></div>
+
               <button
                 type="submit"
                 class="w-full px-3 py-4 text-white bg-indigo-500 rounded-md focus:bg-indigo-600 focus:outline-none"
