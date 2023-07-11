@@ -144,7 +144,7 @@ const BlogContent = () => {
   }, [votes]);
 
   return (
-    <div className="h-full bg-gray-700 ">
+    <div className="h-full  bg-gray-700 ">
       <div className="flex justify-center items-center">
         <h1 className="text-4xl font-bold text-white mt-10 mb-5">
           {blog !== null && blog.title}

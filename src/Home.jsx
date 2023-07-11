@@ -8,7 +8,7 @@ const Home = () => {
     const element = document.getElementById("timeline");
     if (element) {
       // 👇 Will scroll smoothly to the top of the next section
-      element.scrollIntoView({ behavior: "smooth" });
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
   return (
@@ -29,7 +29,7 @@ const Home = () => {
           <p class="text-xs text-gray-400 "> I am a full stack developer </p>
 
           {/* contact me */}
-          <button class=" transition ease-in-out delay-150 bg-indigo-600 px-8 py-2 mt-8 rounded-2xl text-gray-100 font-semibold uppercase tracking-wide   hover:scale-110 duration-100">
+          <button class=" transition ease-in-out delay-150 bg-blue-500 px-8 py-2 mt-8 rounded-2xl text-gray-100 font-semibold uppercase tracking-wide  hover:-translate-y-1  hover:bg-indigo-500 duration-300">
             <Link to="/contact">Contact Me</Link>
           </button>
 

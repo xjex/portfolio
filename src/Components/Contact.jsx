@@ -50,7 +50,7 @@ const Contact = () => {
       .then(async (response) => {
         let json = await response.json();
         if (response.status === 200) {
-          console.log("Success:", json.message);
+          console.log("Success: ", json.message);
           alert("Success:" + json.message);
         } else {
           console.error("Error:", json.message);
@@ -72,7 +72,7 @@ const Contact = () => {
         }
       >
         <div class="flex p-5 flex-col justify-center items-center h-32 bg-indigo-600">
-          <h3 class="text-lg text-white">How can I help?</h3>
+          <h3 class="text-lg text-white">Talk To Me</h3>
         </div>{" "}
         <div class="bg-gray-50 flex-grow p-6">
           <form
