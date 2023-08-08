@@ -72,7 +72,7 @@ const Contact = () => {
         }
       >
         <div class="flex p-5 flex-col justify-center items-center h-32 bg-indigo-600">
-          <h3 class="text-lg text-white">Talk To Me</h3>
+          <h3 class="text-lg text-white">Hello 👋</h3>
         </div>{" "}
         <div class="bg-gray-50 flex-grow p-6">
           <form
@@ -183,7 +183,7 @@ const Contact = () => {
 
               <button
                 type="submit"
-                class="w-full px-3 py-4 text-white bg-indigo-500 rounded-md focus:bg-indigo-600 focus:outline-none"
+                class=" w-full px-3 py-4 transition ease-in-out delay-150 rounded-xl bg-blue-500 text-white  focus:bg-indigo-600 focus:outline-none hover:-translate-y-1  hover:bg-indigo-500 "
               >
                 Send Message
               </button>
@@ -194,7 +194,8 @@ const Contact = () => {
       <div className="flex items-center justify-center">
         <button
           id="w3f__widget--button"
-          className=" transition ease-in-out delay-150 hover:scale-110 duration-100 fixed bottom-5 right-5 z-50 w-14 h-14 text-white bg-indigo-600 rounded-full shadow-lg focus:outline-none flex items-center justify-center "
+          // transition ease-in-out delay-150 bg-blue-500 px-8 py-2 mt-8 rounded-2xl text-gray-100 font-semibold uppercase tracking-wide  hover:-translate-y-1  hover:bg-indigo-500 duration-300
+          className=" transition ease-in-out delay-150 hover:scale-110  fixed bottom-5 right-5 z-50 w-14 h-14 text-white bg-blue-500 rounded-full   hover:-translate-y-2 hover:bg-indigo-500 duration-300 shadow-lg focus:outline-none flex items-center justify-center "
           onClick={() => setOpen(!open)}
         >
           <IconContext.Provider value={{ size: "1.5em" }}>

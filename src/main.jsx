@@ -24,7 +24,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/contact",
-    element: <div>Contact</div>,
+    element: (
+      <div>
+        <Error />
+      </div>
+    ),
   },
   {
     path: "/projects",
@@ -32,7 +36,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/resume",
-    element: <div>Resume</div>,
+    element: (
+      <div>
+        <Error />
+      </div>
+    ),
   },
   {
     path: "/blogs",
