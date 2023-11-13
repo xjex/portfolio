@@ -15,7 +15,7 @@ const Home = (props) => {
   return (
     <div class="h-screen">
       <div class=" h-full items-center justify-center flex flex-col ">
-        <div class="bg-white font-semibold text-center rounded-3xl border shadow-lg p-10 max-w-xs ">
+        <div class="bg-white font-semibold text-center rounded-3xl shadow-2xl shadow-gray-800 border p-10 max-w-xs  transition ">
           <img
             class="mb-3 w-50 h-50 rounded-full shadow-lg mx-auto scale-100"
             src={profileimg}
@@ -30,21 +30,28 @@ const Home = (props) => {
           <p class="text-xs text-gray-400 "> I am a full stack developer </p>
 
           {/* contact me */}
-          <button
-            onClick={props.toggleMail}
-            class=" transition ease-in-out delay-150 bg-blue-500 px-8 py-2 mt-8 rounded-2xl text-gray-100 font-semibold uppercase tracking-wide  hover:-translate-y-1  hover:bg-indigo-500 duration-300"
-          >
-            Contact Me
-          </button>
 
+          <div>
+            <div class="relative">
+              <button
+                onClick={props.toggleMail}
+                class="  transition ease-in-out delay-150 bg-blue-500 px-8 py-2 mt-8 rounded-2xl text-gray-100 font-semibold uppercase tracking-wide  hover:-translate-y-1  hover:bg-indigo-500 duration-300 ..."
+              >
+                Contact Me
+              </button>
+            </div>
+          </div>
           {/* line */}
           <div class="flex items-center justify-center mt-4">
             <div class="border-t border-gray-300 w-16"></div>
-            <p class="text-xs text-gray-400 mx-2"> Socials </p>
+            <p class="text-s text-blue-400 mx-2 hover:animate-bounce">
+              {" "}
+              Socials{" "}
+            </p>
             <div class="border-t border-gray-300 w-16"></div>
           </div>
           {/* Socials */}
-          <ul class="flex items-center justify-center mt-4 space-x-4">
+          <ul class="flex items-center justify-center mt-4 space-x-4  ">
             <li class="transition ease-in-out delay-150 rounded-3xl bg-blue-500 hover:-translate-y-1  hover:bg-indigo-500 duration-300 ...">
               <a
                 href="https://github.com/xjex"

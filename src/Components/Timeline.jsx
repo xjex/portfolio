@@ -4,7 +4,7 @@ const Timeline = () => {
   return (
     <div class="w-10/12 md:w-7/12 lg:6/12 mx-auto relative py-20  ">
       <h1 class="text-3xl text-center font-bold text-white">Timeline ⌚</h1>
-      <div class="bg-white p-10 rounded-3xl mt-10">
+      <div class="bg-white p-10 rounded-2xl mt-10  shadow-2xl transition-shadow  shadow-gray-800">
         <div class="border-l-2 mt-10 ">
           {/* <!-- Card 1 --> */}
           <div class="transform transition cursor-pointer hover:-translate-y-2 ml-10 relative flex items-center px-6 py-4 bg-blue-600 text-white rounded-2xl mb-10 flex-col md:flex-row space-y-4 md:space-y-0">

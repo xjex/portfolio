@@ -8,6 +8,7 @@ import Nav from "./Nav";
 import Projects from "./Projects";
 import Portfolio from "./BlogsV2";
 import Contact from "./Contact";
+import Skills from "../Skills";
 
 const Landing = () => {
   const [status, setStatus] = useState(false);
@@ -32,7 +33,7 @@ const Landing = () => {
       <div id="timeline">
         <Timeline />
       </div>
-
+      <Skills />
       <Alert />
       <Contact stat={status} toggleMail={toggleMail} />
       <div id="blogs">
