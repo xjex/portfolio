@@ -4,12 +4,27 @@ import { IconContext } from "react-icons";
 import { FaEnvelope, FaTimes } from "react-icons/fa";
 import Alert from "./Alert";
 import OpenMailer from "./Hooks/OpenMailer";
-
+import HCaptcha from "@hcaptcha/react-hcaptcha";
 const Contact = (props) => {
+  const [value, setValue] = useState("");
+  const [allowSend, setAllowSend] = useState(false);
   const env = import.meta.env;
+
+  const onHCaptchaChange = (token) => {
+    setValue("h-captcha-response", token);
+
+    if (token === "") {
+      alert("Please verify you are not a robot");
+    } else {
+      setAllowSend(true);
+    }
+
+    console.log("token", token);
+    console.log(value + "tite");
+  };
   const handleSubmit = (event) => {
     event.preventDefault();
-
+    console.log(event.preventDefault());
     const form = event.target;
     if (!form.checkValidity()) {
       form.reportValidity();
@@ -47,6 +62,13 @@ const Contact = (props) => {
       .catch((error) => {
         console.error("Error:", error);
       });
+  };
+
+  const submitColor = () => {
+    if (allowSend) {
+      return "bg-green-500 focus:bg-indigo-600  hover:bg-indigo-500 hover:-translate-y-1 ";
+    }
+    return " shake bg-red-500  focus:bg-orange-600  hover:bg-orange-500";
   };
 
   return (
@@ -154,7 +176,7 @@ const Contact = (props) => {
                 Message
               </label>
               <textarea
-                rows="5"
+                rows="4 "
                 name="message"
                 id="message"
                 placeholder="Your Message"
@@ -168,10 +190,14 @@ const Contact = (props) => {
               <div class="mb-4"></div>
 
               <div class="mb-4"></div>
-
+              <HCaptcha
+                sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"
+                onVerify={onHCaptchaChange}
+              />
               <button
                 type="submit"
-                class=" w-full px-3 py-4 transition ease-in-out delay-150 rounded-xl bg-blue-500 text-white  focus:bg-indigo-600 focus:outline-none hover:-translate-y-1  hover:bg-indigo-500 "
+                disabled={!allowSend}
+                class={`w-full px-3 py-4 transition ease-in-out delay-150 rounded-xl text-white  ${submitColor()} focus:outline-none   `}
               >
                 Send Message
               </button>
@@ -183,7 +209,7 @@ const Contact = (props) => {
         <button
           id="w3f__widget--button"
           // transition ease-in-out delay-150 bg-blue-500 px-8 py-2 mt-8 rounded-2xl text-gray-100 font-semibold uppercase tracking-wide  hover:-translate-y-1  hover:bg-indigo-500 duration-300
-          className="transition ease-in-out delay-150 hover:scale-110  fixed bottom-5 right-5 z-50 w-14 h-14 text-white bg-blue-500 rounded-full   hover:-translate-y-2 hover:bg-indigo-500 duration-300 shadow-lg focus:outline-none flex items-center justify-center "
+          className=" transition ease-in-out delay-150 hover:scale-110  fixed bottom-5 right-5 z-50 w-14 h-14 text-white rounded-full   hover:-translate-y-2 bg-blue-500 hover:bg-indigo-500 duration-300 shadow-lg focus:outline-none flex items-center justify-center "
           onClick={props.toggleMail}
         >
           <IconContext.Provider value={{ size: "1.5em" }}>
