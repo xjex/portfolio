@@ -98,13 +98,13 @@ const Contact = (props) => {
                 htmlFor="full_name"
                 class="block mb-2 text-sm text-gray-600 dark:text-gray-400"
               >
-                Full Name
+                Full Name / Company Name
               </label>
               <input
                 type="text"
                 name="name"
                 id="full_name"
-                placeholder="John Doe"
+                placeholder="Name"
                 required
                 class="hover:ea w-full px-3 py-2 bg-white placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
               />
@@ -154,7 +154,7 @@ const Contact = (props) => {
                 Message
               </label>
               <textarea
-                rows="2"
+                rows="5"
                 name="message"
                 id="message"
                 placeholder="Your Message"

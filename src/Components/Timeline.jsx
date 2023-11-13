@@ -1,6 +1,29 @@
 import React from "react";
 
 const Timeline = () => {
+  const getDate = (date) => {
+    const currentDate = new Date();
+    const startDate = new Date(date);
+
+    let yearDiff = currentDate.getFullYear() - startDate.getFullYear();
+    let monthDiff = currentDate.getMonth() - startDate.getMonth();
+
+    if (monthDiff < 0) {
+      yearDiff--;
+      monthDiff += 12;
+    }
+
+    if (yearDiff === 0 && monthDiff === 0) {
+      return `${yearDiff} years`;
+    } else if (yearDiff === 0 && monthDiff !== 0) {
+      return `${monthDiff} months`;
+    } else if (yearDiff !== 0 && monthDiff === 0) {
+      return `${yearDiff} years`;
+    } else if (yearDiff !== 0 && monthDiff !== 0) {
+      return `${yearDiff} years, ${monthDiff} months`;
+    }
+  };
+
   return (
     <div class="w-10/12 md:w-7/12 lg:6/12 mx-auto relative py-20  ">
       <h1 class="text-3xl text-center font-bold text-white">Timeline ⌚</h1>
@@ -16,13 +39,19 @@ const Timeline = () => {
 
             {/* <!-- Content that showing in the box --> */}
             <div class="flex-auto">
-              <h1 class="text-lg">May 31, 2021 - Present </h1>
-              <h1 class="text-xl font-bold">Technical Content Creator</h1>
+              <span class=" bg-green-500 text-white text-sm font-medium mr-2 px-2.5 py-0.5 rounded">
+                Present
+              </span>
+              <h1 class="xl:text-lg xs:text-xs ">May 31, 2021 - Present </h1>
+              <h1 class="xl:text-lg xs:text-xs font-bold">
+                Technical Content Creator
+              </h1>
               <h3>StackTrek</h3>
             </div>
-            <span class=" bg-green-500 text-gray-900 text-sm font-medium mr-2 px-2.5 py-0.5 rounded">
-              Present
-            </span>
+
+            <p class="text-center text-white hover:text-gray-300">
+              {getDate("05-31-2021")}
+            </p>
 
             {/* <a href="#" class="text-center text-white hover:text-gray-300">
             Download materials
@@ -39,8 +68,10 @@ const Timeline = () => {
 
             {/* <!-- Content that showing in the box --> */}
             <div class="flex-auto">
-              <h1 class="text-lg">February 2021 - May 2021</h1>
-              <h1 class="text-xl font-bold">Part-Time Video Editor</h1>
+              <h1 class="xl:text-lg xs:text-xs ">February 2021 - May 2021</h1>
+              <h1 class="xl:text-lg xs:text-xs  font-bold">
+                Part-Time Video Editor
+              </h1>
               <h3>PhilRad Digital Advertising</h3>
             </div>
             <p class="text-center text-white hover:text-gray-300"> 4 months</p>
@@ -59,8 +90,10 @@ const Timeline = () => {
 
             {/* <!-- Content that showing in the box --> */}
             <div class="flex-auto">
-              <h1 class="text-lg">March 2020 - Feb 2021</h1>
-              <h1 class="text-xl font-bold">Quality Assurance Engineer</h1>
+              <h1 class="xl:text-lg xs:text-xs ">March 2020 - Feb 2021</h1>
+              <h1 class="xl:text-lg xs:text-xs  font-bold">
+                Quality Assurance Engineer
+              </h1>
               <h3>Pythomy</h3>
             </div>
             <p class="text-center text-white hover:text-gray-300"> 1 year</p>
@@ -79,8 +112,10 @@ const Timeline = () => {
 
             {/* <!-- Content that showing in the box --> */}
             <div class="flex-auto">
-              <h1 class="text-lg">August 2016 - November 2020</h1>
-              <h1 class="text-xl font-bold">
+              <h1 class="xl:text-lg xs:text-xs ">
+                August 2016 - November 2020
+              </h1>
+              <h1 class="xl:text-lg xs:text-xs ">
                 Graduated in Bachelor of Science in Computer Science 🎓
               </h1>
 
@@ -102,8 +137,8 @@ const Timeline = () => {
 
             {/* <!-- Content that showing in the box --> */}
             <div class="flex-auto">
-              <h1 class="text-lg">February 2020 - April 2020</h1>
-              <h1 class="text-xl font-bold">
+              <h1 class="xl:text-lg xs:text-xs ">February 2020 - April 2020</h1>
+              <h1 class="xl:text-lg xs:text-xs font-bold">
                 Fourth Year Internship | Web Developer and Quality Assurance
                 Engineer
               </h1>
@@ -125,8 +160,8 @@ const Timeline = () => {
 
             {/* <!-- Content that showing in the box --> */}
             <div class="flex-auto">
-              <h1 class="text-lg">June 2017 - November 2017</h1>
-              <h1 class="text-xl font-bold">
+              <h1 class="xl:text-lg xs:text-xs ">June 2017 - November 2017</h1>
+              <h1 class="xl:text-lg xs:text-xs font-bold">
                 Second Year Internship | Social Media Manager
               </h1>
               <h3>Gladness Staffing Services</h3>

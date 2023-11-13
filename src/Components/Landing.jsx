@@ -34,8 +34,11 @@ const Landing = () => {
         <Timeline />
       </div>
       <Skills />
+
       <Alert />
+
       <Contact stat={status} toggleMail={toggleMail} />
+
       <div id="blogs">
         <Portfolio />
         {/* <Blog /> */}

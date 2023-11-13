@@ -39,25 +39,50 @@ const Skills = () => {
         rating: 5.0,
         svg: "https://cdn.svgporn.com/logos/nextjs.svg",
       },
+      {
+        name: "Vite",
+        rating: 5.0,
+        svg: "https://cdn.svgporn.com/logos/vitejs.svg",
+      },
+      {
+        name: "Firebase",
+        rating: 4.0,
+        svg: "https://cdn.svgporn.com/logos/firebase.svg",
+      },
+      {
+        name: "Supabase",
+        rating: 5.0,
+        svg: "https://cdn.svgporn.com/logos/supabase.svg",
+      },
+      {
+        name: "HTML",
+        rating: 7.0,
+        svg: "https://cdn.svgporn.com/logos/html-5.svg",
+      },
+      {
+        name: "CSS",
+        rating: 7.0,
+        svg: "https://cdn.svgporn.com/logos/css-3.svg",
+      },
     ],
     adobe: [
       {
-        name: "photoshop",
+        name: "Photoshop",
         rating: 7.0,
         svg: "https://cdn.svgporn.com/logos/adobe-photoshop.svg",
       },
       {
-        name: "premiere",
+        name: "Premiere",
         rating: 6.0,
         svg: "https://cdn.svgporn.com/logos/adobe-premiere.svg",
       },
       {
-        name: "illustrator",
+        name: "Illustrator",
         rating: 5.0,
         svg: "https://cdn.svgporn.com/logos/adobe-illustrator.svg",
       },
       {
-        name: "after effects",
+        name: "AfterEffects",
         rating: 4.0,
         svg: "https://cdn.svgporn.com/logos/adobe-after-effects.svg",
       },
@@ -94,7 +119,7 @@ const Skills = () => {
         svg: "https://cdn.svgporn.com/logos/php.svg",
       },
       {
-        name: "c#",
+        name: "C#",
         rating: 4.0,
         svg: "https://cdn.svgporn.com/logos/c-sharp.svg",
       },
@@ -102,6 +127,27 @@ const Skills = () => {
   });
 
   //change color of rating
+
+  const changeColor = (rating) => {
+    if (rating >= 7) {
+      return "bg-green-500";
+    } else if (rating >= 5) {
+      return "bg-yellow-500";
+    } else {
+      return "bg-red-500";
+    }
+  };
+
+  const textColor = (rating) => {
+    if (rating >= 7) {
+      return "text-green-700";
+    } else if (rating >= 5) {
+      return "text-yellow-700";
+    } else {
+      return "text-red-700";
+    }
+  };
+
   return (
     <div className="">
       <h1 class="text-3xl text-center font-bold text-white">Skills 🔨</h1>
@@ -112,7 +158,7 @@ const Skills = () => {
             <header className="flex items-center">
               <h3 className="font-medium text-lg">Web Developement 🕶</h3>
             </header>
-            <section className="py-4 grid grid-cols-2 gap-x-6 overflow-y-auto max-h-[300px] ">
+            <section className="py-4 grid xl:grid-cols-2 xs:grid-cols-1 md:grid-cols-2 gap-x-6 overflow-y-auto max-h-[300px] ">
               {/* Add your content here */}
               {/* JS */}
               {skills.web.map((skill) => {
@@ -126,13 +172,19 @@ const Skills = () => {
                         <h2 className="font-medium text-md mr-auto text-gray-700 flex items-center">
                           {skill.name}
                         </h2>
-                        <span className="px-1 py-1 rounded-lg bg-red-50 text-green-700 text-xs">
+                        <span
+                          className={`px-1 py-1 rounded-lg bg-red-50 ${textColor(
+                            skill.rating
+                          )} text-xs`}
+                        >
                           {skill.rating} / 10
                         </span>
                       </div>
                       <div className="overflow-hidden bg-blue-50 h-1.5 rounded-full w-full">
                         <span
-                          className="h-full bg-blue-500 w-full block rounded-full"
+                          className={`h-full ${changeColor(
+                            skill.rating
+                          )} w-full block rounded-full`}
                           style={{ width: skill.rating * 10 + "%" }}
                         ></span>
                       </div>
@@ -155,7 +207,7 @@ const Skills = () => {
             <header className="flex items-center">
               <h3 className="font-medium text-lg">Adobe 🎨</h3>
             </header>
-            <section className="py-4 grid grid-cols-2 gap-x-6  overflow-y-auto max-h-[300px]">
+            <section className="py-4 grid xl:grid-cols-2 xs:grid-cols-1 md:grid-cols-2 gap-x-6  overflow-y-auto max-h-[300px]">
               {/* Add your content here */}
               {/* JS */}
               {skills.adobe.map((skill) => {
@@ -169,13 +221,19 @@ const Skills = () => {
                         <h2 className="font-medium text-md mr-auto text-gray-700 flex items-center">
                           {skill.name}
                         </h2>
-                        <span className="px-1 py-1 rounded-lg bg-red-50 text-green-700 text-xs">
+                        <span
+                          className={`px-1 py-1 rounded-lg bg-red-50 ${textColor(
+                            skill.rating
+                          )} text-xs`}
+                        >
                           {skill.rating} / 10
                         </span>
                       </div>
                       <div className="overflow-hidden bg-blue-50 h-1.5 rounded-full w-full">
                         <span
-                          className="h-full bg-orange-500 w-full block rounded-full"
+                          className={`h-full ${changeColor(
+                            skill.rating
+                          )} w-full block rounded-full`}
                           style={{ width: skill.rating * 10 + "%" }}
                         ></span>
                       </div>
@@ -198,7 +256,7 @@ const Skills = () => {
             <header className="flex items-center">
               <h3 className="font-medium text-lg">Programming Languages 👨‍💻 </h3>
             </header>
-            <section className="py-4 grid grid-cols-2 gap-x-6 overflow-y-auto max-h-[300px]">
+            <section className="py-4 grid xl:grid-cols-2 xs:grid-cols-1 md:grid-cols-2 gap-x-6 overflow-y-auto max-h-[300px]">
               {/* Add your content here */}
               {/* JS */}
               {skills.programming.map((skill) => {
@@ -212,13 +270,19 @@ const Skills = () => {
                         <h2 className="font-medium text-md mr-auto text-gray-700 flex items-center">
                           {skill.name}
                         </h2>
-                        <span className="px-1 py-1 rounded-lg bg-red-50 text-green-700 text-xs">
+                        <span
+                          className={`px-1 py-1 rounded-lg bg-red-50 ${textColor(
+                            skill.rating
+                          )} text-xs`}
+                        >
                           {skill.rating} / 10
                         </span>
                       </div>
                       <div className="overflow-hidden bg-blue-50 h-1.5 rounded-full w-full">
                         <span
-                          className="h-full bg-blue-500 w-full block rounded-full"
+                          className={`h-full ${changeColor(
+                            skill.rating
+                          )} w-full block rounded-full`}
                           style={{ width: skill.rating * 10 + "%" }}
                         ></span>
                       </div>

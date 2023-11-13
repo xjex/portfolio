@@ -17,10 +17,11 @@ const Alert = () => {
           </svg>
         </div>
         <div>
-          <p class="font-bold">This part is in progress</p>
+          <p class="font-bold">This part is in progress.</p>
+
           <p class="text-sm">
-            Some of the functions may not work below. you can contact me via
-            button below
+            Some of the functions may not work below. Feel free to browse my
+            page.
           </p>
         </div>
       </div>
