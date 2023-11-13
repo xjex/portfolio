@@ -3,7 +3,7 @@ import { FaLinkedin, FaTwitter, FaGithub, FaFacebook } from "react-icons/fa";
 import profileimg from "./assets/Profile2.png";
 import { Link } from "react-router-dom";
 
-const Home = () => {
+const Home = (props) => {
   const handleClickScroll = () => {
     const element = document.getElementById("timeline");
     if (element) {
@@ -11,6 +11,7 @@ const Home = () => {
       element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
+
   return (
     <div class="h-screen">
       <div class=" h-full items-center justify-center flex flex-col ">
@@ -29,8 +30,11 @@ const Home = () => {
           <p class="text-xs text-gray-400 "> I am a full stack developer </p>
 
           {/* contact me */}
-          <button class=" transition ease-in-out delay-150 bg-blue-500 px-8 py-2 mt-8 rounded-2xl text-gray-100 font-semibold uppercase tracking-wide  hover:-translate-y-1  hover:bg-indigo-500 duration-300">
-            <Link to="/contact">Contact Me</Link>
+          <button
+            onClick={props.toggleMail}
+            class=" transition ease-in-out delay-150 bg-blue-500 px-8 py-2 mt-8 rounded-2xl text-gray-100 font-semibold uppercase tracking-wide  hover:-translate-y-1  hover:bg-indigo-500 duration-300"
+          >
+            Contact Me
           </button>
 
           {/* line */}

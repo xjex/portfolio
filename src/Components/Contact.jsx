@@ -1,24 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaFacebookMessenger } from "react-icons/fa";
 import { IconContext } from "react-icons";
 import { FaEnvelope, FaTimes } from "react-icons/fa";
 import Alert from "./Alert";
-const Contact = () => {
-  //icon context
-  const [isClicked, setIsClicked] = useState(false);
+import OpenMailer from "./Hooks/OpenMailer";
 
+const Contact = (props) => {
   const env = import.meta.env;
-
-  const handleClick = () => {
-    if (!isClicked) {
-      setIsClicked(true);
-    } else {
-      setIsClicked(false);
-    }
-  };
-
-  const [open, setOpen] = useState(false);
-
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -37,7 +25,7 @@ const Contact = () => {
     const json = JSON.stringify(object);
 
     form.reset();
-    setOpen(false);
+    props.toggleMail();
 
     fetch("https://api.web3forms.com/submit", {
       method: "POST",
@@ -66,7 +54,7 @@ const Contact = () => {
       <div
         id="w3f__widget--content"
         class={
-          open
+          props.stat
             ? " fixed flex flex-col z-50 bottom-[100px] top-0 right-0 h-auto left-0 sm:top-auto sm:right-5 sm:left-auto h-[calc(100%-95px)] w-full sm:w-[350px] overflow-auto min-h-[250px] sm:h-[600px] border border-gray-300 bg-white shadow-2xl rounded-md "
             : "hidden "
         }
@@ -195,11 +183,11 @@ const Contact = () => {
         <button
           id="w3f__widget--button"
           // transition ease-in-out delay-150 bg-blue-500 px-8 py-2 mt-8 rounded-2xl text-gray-100 font-semibold uppercase tracking-wide  hover:-translate-y-1  hover:bg-indigo-500 duration-300
-          className=" transition ease-in-out delay-150 hover:scale-110  fixed bottom-5 right-5 z-50 w-14 h-14 text-white bg-blue-500 rounded-full   hover:-translate-y-2 hover:bg-indigo-500 duration-300 shadow-lg focus:outline-none flex items-center justify-center "
-          onClick={() => setOpen(!open)}
+          className="transition ease-in-out delay-150 hover:scale-110  fixed bottom-5 right-5 z-50 w-14 h-14 text-white bg-blue-500 rounded-full   hover:-translate-y-2 hover:bg-indigo-500 duration-300 shadow-lg focus:outline-none flex items-center justify-center "
+          onClick={props.toggleMail}
         >
           <IconContext.Provider value={{ size: "1.5em" }}>
-            {open ? <FaTimes /> : <FaEnvelope />}
+            {props.stat ? <FaTimes /> : <FaEnvelope />}
           </IconContext.Provider>
         </button>
       </div>

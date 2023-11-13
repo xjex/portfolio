@@ -12,6 +12,7 @@ import { Analytics } from "@vercel/analytics/react";
 import Blog from "./Blog";
 import Nav from "./Components/Nav";
 import BlogContent from "./BlogContent";
+import OpenMailer from "./Components/Hooks/OpenMailer";
 
 const router = createBrowserRouter([
   {
@@ -56,7 +57,6 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Analytics />
-    <Contact />
 
     <RouterProvider router={router} />
   </React.StrictMode>
