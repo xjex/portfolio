@@ -12,13 +12,13 @@ import Contact from "./Contact";
 const Landing = () => {
   const [status, setStatus] = useState(false);
 
+  //toggle contact form
   const toggleMail = () => {
     if (status) {
       setStatus(false);
     } else {
       setStatus(true);
     }
-    console.log("bobo", status);
   };
 
   return (
