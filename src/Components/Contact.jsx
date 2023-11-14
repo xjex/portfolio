@@ -20,48 +20,53 @@ const Contact = (props) => {
     }
 
     console.log("token", token);
-    console.log(value + "tite");
   };
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(event.preventDefault());
-    const form = event.target;
-    if (!form.checkValidity()) {
-      form.reportValidity();
-      return;
-    }
 
-    const formData = new FormData(form);
-    const object = {};
-    formData.forEach((value, key) => {
-      object[key] = value;
-    });
-    //console.log(object);
-    const json = JSON.stringify(object);
+    if (!allowSend) {
+      alert("Please verify you are not a robot");
+    } else {
+      console.log(event.preventDefault());
+      const form = event.target;
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
 
-    form.reset();
-    props.toggleMail();
-
-    fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: json,
-    })
-      .then(async (response) => {
-        let json = await response.json();
-        if (response.status === 200) {
-          console.log("Success: ", json.message);
-          alert("Success:" + json.message);
-        } else {
-          console.error("Error:", json.message);
-        }
-      })
-      .catch((error) => {
-        console.error("Error:", error);
+      const formData = new FormData(form);
+      const object = {};
+      formData.forEach((value, key) => {
+        object[key] = value;
       });
+      //console.log(object);
+      const json = JSON.stringify(object);
+
+      form.reset();
+      props.toggleMail();
+
+      fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: json,
+      })
+        .then(async (response) => {
+          let json = await response.json();
+          if (response.status === 200) {
+            console.log("Success: ", json.message);
+            alert("Success:" + json.message);
+          } else {
+            console.error("Error:", json.message);
+          }
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+    }
   };
 
   const submitColor = () => {
@@ -196,7 +201,6 @@ const Contact = (props) => {
               />
               <button
                 type="submit"
-                disabled={!allowSend}
                 class={`w-full px-3 py-4 transition ease-in-out delay-150 rounded-xl text-white  ${submitColor()} focus:outline-none   `}
               >
                 Send Message

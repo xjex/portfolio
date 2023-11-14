@@ -156,7 +156,9 @@ const Skills = () => {
         <div className="flex items-center justify-center pb-5 pt-10 transition hover:-translate-y-3">
           <section className="w-full p-10 rounded-xl max-w-2xl shadow-lg shadow-gray-800 bg-white m-5">
             <header className="flex items-center">
-              <h3 className="font-medium text-lg">Web Developement 🕶</h3>
+              <h3 className="font-medium text-lg  text-black">
+                Web Developement 👓
+              </h3>
             </header>
             <section className="py-4 grid xl:grid-cols-2 xs:grid-cols-1 md:grid-cols-2 gap-x-6 overflow-y-auto max-h-[300px] ">
               {/* Add your content here */}
@@ -205,7 +207,7 @@ const Skills = () => {
         <div className="flex items-center justify-center pb-5 pt-10 transition hover:-translate-y-3 ">
           <section className="w-full p-10 rounded-xl max-w-2xl shadow-lg shadow-gray-800 bg-white m-5">
             <header className="flex items-center">
-              <h3 className="font-medium text-lg">Adobe 🎨</h3>
+              <h3 className="font-medium text-lg  text-black">Adobe 🎨</h3>
             </header>
             <section className="py-4 grid xl:grid-cols-2 xs:grid-cols-1 md:grid-cols-2 gap-x-6  overflow-y-auto max-h-[300px]">
               {/* Add your content here */}
@@ -254,7 +256,9 @@ const Skills = () => {
         <div className="flex items-center justify-center pb-5 pt-10 transition hover:-translate-y-3">
           <section className="w-full p-10 rounded-xl max-w-2xl shadow-lg shadow-gray-800 bg-white m-5">
             <header className="flex items-center">
-              <h3 className="font-medium text-lg">Programming Languages 👨‍💻 </h3>
+              <h3 className="font-medium text-lg text-black">
+                Programming Languages 👨‍💻{" "}
+              </h3>
             </header>
             <section className="py-4 grid xl:grid-cols-2 xs:grid-cols-1 md:grid-cols-2 gap-x-6 overflow-y-auto max-h-[300px]">
               {/* Add your content here */}

@@ -48,17 +48,11 @@ const Portfolio = () => {
 
         {fetchError && <div>{}</div>}
         {posts === null && (
-          <div className=" text-center">
-            <div className=" animate-pulse grid grid-rows-1 grid-flow-col ">
-              {Array.from({ length: 2 }, (movie, i) => (
-                <div
-                  className="text-white flex flex-col justify-center items-center "
-                  key={i}
-                >
-                  <div className="w-full lg:w-1/2 bg-gray-700/50 h-48 lg:h-96 rounded-2xl"></div>
-                </div>
-              ))}
-            </div>
+          <div class="flex flex-col gap-4 w-52">
+            <div class="skeleton h-32 w-full"></div>
+            <div class="skeleton h-4 w-28"></div>
+            <div class="skeleton h-4 w-full"></div>
+            <div class="skeleton h-4 w-full"></div>
           </div>
         )}
 

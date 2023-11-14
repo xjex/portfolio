@@ -9,6 +9,7 @@ import Projects from "./Projects";
 import Portfolio from "./BlogsV2";
 import Contact from "./Contact";
 import Skills from "../Skills";
+import Workcomp from "./Workcomp";
 
 const Landing = () => {
   const [status, setStatus] = useState(false);
@@ -34,7 +35,7 @@ const Landing = () => {
         <Timeline />
       </div>
       <Skills />
-
+      <Workcomp />
       <Alert />
 
       <Contact stat={status} toggleMail={toggleMail} />
