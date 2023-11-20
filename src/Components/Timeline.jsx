@@ -54,8 +54,8 @@ const Timeline = () => {
             </p>
 
             {/* <a href="#" class="text-center text-white hover:text-gray-300">
-            Download materials
-          </a> */}
+      Download materials
+    </a> */}
           </div>
 
           {/* <!-- Card 2 --> */}
@@ -76,8 +76,8 @@ const Timeline = () => {
             </div>
             <p class="text-center text-white hover:text-gray-300"> 4 months</p>
             {/* <a href="#" class="text-center text-white hover:text-gray-300">
-            Download materials
-          </a> */}
+      Download materials
+    </a> */}
           </div>
 
           {/* <!-- Card 3 --> */}
@@ -98,8 +98,8 @@ const Timeline = () => {
             </div>
             <p class="text-center text-white hover:text-gray-300"> 1 year</p>
             {/* <a href="#" class="text-center text-white hover:text-gray-300">
-            Download materials
-          </a> */}
+      Download materials
+    </a> */}
           </div>
 
           {/* <!-- Card 4 --> */}
@@ -123,8 +123,8 @@ const Timeline = () => {
             </div>
             <p class="text-center text-white hover:text-gray-300"> 4 years</p>
             {/* <a href="#" class="text-center text-white hover:text-gray-300">
-            Download materials
-          </a> */}
+      Download materials
+    </a> */}
           </div>
 
           {/* <!-- Card 5 --> */}
@@ -146,8 +146,8 @@ const Timeline = () => {
             </div>
             <p class="text-center text-white hover:text-gray-300"> 3 months</p>
             {/* <a href="#" class="text-center text-white hover:text-gray-300">
-            Download materials
-          </a> */}
+      Download materials
+    </a> */}
           </div>
 
           {/* <!-- Card 6 --> */}
@@ -168,8 +168,8 @@ const Timeline = () => {
             </div>
             <p class="text-center text-white hover:text-gray-300"> 3 months</p>
             {/* <a href="#" class="text-center text-white hover:text-gray-300">
-            Download materials
-          </a> */}
+      Download materials
+    </a> */}
           </div>
         </div>
       </div>

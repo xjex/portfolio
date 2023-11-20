@@ -35,6 +35,11 @@ const Skills = () => {
         svg: "https://cdn.svgporn.com/logos/express.svg",
       },
       {
+        name: "Puppeteer",
+        rating: 5.0,
+        svg: "https://cdn.svgporn.com/logos/puppeteer.svg",
+      },
+      {
         name: "Next",
         rating: 5.0,
         svg: "https://cdn.svgporn.com/logos/nextjs.svg",
