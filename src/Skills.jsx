@@ -5,7 +5,7 @@ const Skills = () => {
   const [skills, setSkills] = useState({
     web: [
       {
-        name: "Javascript ES6+",
+        name: "JavaScript",
         rating: 6.4,
         svg: "https://cdn.svgporn.com/logos/javascript.svg",
       },
@@ -14,11 +14,7 @@ const Skills = () => {
         rating: 6.0,
         svg: "https://cdn.svgporn.com/logos/tailwindcss-icon.svg",
       },
-      {
-        name: "Postgres",
-        rating: 5.3,
-        svg: "https://cdn.svgporn.com/logos/postgresql.svg",
-      },
+
       {
         name: "React",
         rating: 5.0,
@@ -151,7 +147,7 @@ const Skills = () => {
       },
       {
         name: "Postgres",
-        rating: 7.0,
+        rating: 5.3,
         svg: "https://cdn.svgporn.com/logos/postgresql.svg",
       },
       {
@@ -199,9 +195,9 @@ const Skills = () => {
       <h1 class="text-3xl text-center font-bold text-white">Skills 🔨</h1>
 
       {/* Web Dev */}
-      <div className="flex flex-wrap justify-center flex-col-2 xl:flex-row xl:justify-center xl:grid-rows-2  md:flex-col ">
+      <div className="flex flex-wrap justify-center flex-col-2 xl:flex-row xl:justify-center xl:grid-rows-2  md:flex-col">
         <div className="flex items-center justify-center pb-5 pt-10 transition hover:-translate-y-3">
-          <section className="w-full p-10 rounded-xl max-w-2xl shadow-lg shadow-gray-800 bg-white m-5">
+          <section className="w-full p-10 rounded-xl max-w-2xl shadow-lg shadow-gray-800 bg-white m-5 ">
             <header className="flex items-center">
               <h3 className="font-medium text-lg  text-black">
                 Web Developement 👓
@@ -211,7 +207,7 @@ const Skills = () => {
               {/* content here */}
               {skills.web.map((skill) => {
                 return (
-                  <div className="flex items-center py-4 bg-blue-200 rounded-2xl 8 p-5 my-2">
+                  <div className="flex items-center py-4 bg-blue-200 rounded-2xl 8 p-5 my-2 hover:from-gray-900">
                     <span className="w-10 h-10 shrink-0 mr-4 rounded-full flex items-center justify-center">
                       <img src={skill.svg} />
                     </span>
