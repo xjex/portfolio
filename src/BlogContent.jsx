@@ -3,6 +3,8 @@ import ReactMarkdown from "react-markdown";
 import Footers from "./Components/Footers";
 import { useLocation } from "react-router-dom";
 import supabase from "./lib/helper/supabaseClient";
+import DOMPurify from "dompurify";
+import parse from "html-react-parser";
 
 const BlogContent = () => {
   const location = useLocation(); // useLocation to get url path or search
@@ -61,6 +63,7 @@ const BlogContent = () => {
 
         if (data) {
           const responseData = data.map((post) => {
+            const sanitizedHtml = DOMPurify.sanitize(post.content);
             return {
               id: post.id,
               title: post.title,
@@ -159,7 +162,7 @@ const BlogContent = () => {
       {blog !== null && (
         <div className=" flex justify-center items-center">
           {/* card */}
-          <div className="max-w-2xl bg-white border-2 border-gray-300 p-5 rounded-md tracking-wide shadow-lg mt-10 mb-5">
+          <div className=" flex-wrap max-w-2xl bg-white border-2 border-gray-300 p-5 rounded-md tracking-wide shadow-lg mt-10 mb-5">
             {/* name */}
             <div className="flex ">
               <div>
@@ -177,7 +180,7 @@ const BlogContent = () => {
             </div>
 
             <div id="header" className="text-start md:text-center ">
-              <div className="flex items-center justify-center w-full align-center">
+              <div className="flex  items-center justify-center w-full align-center">
                 <img
                   alt="mountain"
                   className=" content-center bg-blue-400 justify-center items-center rounded-md border-2 border-gray-300"
@@ -190,9 +193,7 @@ const BlogContent = () => {
                   <h1 className="text-2xl font-semibold mb-2">{blog.title}</h1>
                 </div>
 
-                <p id="job" className="text-gray-800 mt-2">
-                  {blog.content}
-                </p>
+                <div className="text-gray-800 mt-2">{parse(blog.content)}</div>
               </div>
             </div>
             <div id="buttons" className="text-center items-center mt-5">
