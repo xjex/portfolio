@@ -7,12 +7,13 @@ import stackLeague from "../assets/stackleague.jpg";
 import stackTrek from "../assets/stacktrek.jpg";
 import portf from "../assets/portf.png";
 import inprogress from "../assets/inprogress.jpg";
+import tools from "../assets/Worktools.jpg";
 const Workcomp = () => {
   const [projects, setProjects] = useState({
     projects: [
       {
         id: 1,
-        title: "Geolect",
+        title: "Geolect 🎤",
         description:
           "A mobile app that uses Google APIs to teach users new words in the language of their choice.",
         image: geolect,
@@ -31,7 +32,7 @@ const Workcomp = () => {
       },
       {
         id: 2,
-        title: "Pythomy",
+        title: "Pythomy 🐍",
         description:
           "As a QA Engineer, I am responsible for testing the app and reporting bugs.",
         image: pythomy,
@@ -42,7 +43,7 @@ const Workcomp = () => {
       },
       {
         id: 3,
-        title: "Coding Challenges",
+        title: "Coding Challenges 📝",
         description:
           "As a content creator for Stacktrek, I create test cases for StackLeague",
         image: stackLeague,
@@ -53,9 +54,9 @@ const Workcomp = () => {
       },
       {
         id: 4,
-        title: "Programming Learning Materials ",
+        title: "Programming Learning Materials 📰",
         description:
-          "As a content creator Stacktrek, I create learning materials for Full Stack Development",
+          "As a content creator for Stacktrek, I create learning materials for Full Stack Development",
         image: stackTrek,
         link: "https://www.stacktrek.com",
         tags: ["Full Stack", "JavaScript", "Testing Tools", "Java", "Python"],
@@ -64,7 +65,7 @@ const Workcomp = () => {
       },
       {
         id: 5,
-        title: "Portfolio Website",
+        title: "Portfolio Website 📂",
         description:
           "This is my portfolio website. I used ReactJS, TailwindCSS, and ViteJS to build this website.",
         image: portf,
@@ -74,6 +75,17 @@ const Workcomp = () => {
         job: ["Full Stack Developer", "Content Creator", "Designer"],
       },
 
+      {
+        id: 6,
+        title: "Work Tools 🛠️",
+        description:
+          "A tool to manage my portfolio website. I used ReactJS, TailwindCSS, and NextJS to build this website.",
+        image: tools,
+        link: "https://github.com/xjex/Work-Tools",
+        tags: ["Scraping", "Pandas", "Python", "Puppeteer", "Tools"],
+        status: "Currently Working On",
+        job: ["Full Stack Developer", "Data Analysis", "Scrape Data"],
+      },
       {
         id: 5,
         title: "Admin Portal Portfolio ",
@@ -98,7 +110,7 @@ const Workcomp = () => {
         {projects.projects.map((post) => {
           return (
             // "bg-white shadow-md border transform transition cursor-pointer  hover:-translate-y-3 border-gray-200  rounded-lg max-w-sm mb-5
-            <Link to={post.link}>
+            <Link to={post.link} target="_blank" rel="noopener noreferrer">
               <div class=" max-w-md overflow-hidden rounded-lg transition bg-white cursor-pointer shadow  hover:-translate-y-3  m-5 ">
                 <img
                   src={post.image}
