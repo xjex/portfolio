@@ -6,7 +6,7 @@ const Skills = () => {
     web: [
       {
         name: "Javascript ES6+",
-        rating: 6.2,
+        rating: 6.4,
         svg: "https://cdn.svgporn.com/logos/javascript.svg",
       },
       {
