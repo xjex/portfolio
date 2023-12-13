@@ -8,9 +8,21 @@ import stackTrek from "../assets/stacktrek.jpg";
 import portf from "../assets/portf.png";
 import inprogress from "../assets/inprogress.jpg";
 import tools from "../assets/Worktools.jpg";
+import stick from "../assets/Stickup.png";
 const Workcomp = () => {
   const [projects, setProjects] = useState({
     projects: [
+      {
+        id: 7,
+        title: "Stick-up!📒",
+        description:
+          "A small social media platform with 24hr duration of posts. I used ReactJS, TailwindCSS, and Next to build this website.",
+        image: stick,
+        link: "https://stick-up.vercel.app",
+        tags: ["NextJS13", "Supabase", "Tailwind", "DaisyUI"],
+        status: "Project",
+        job: ["Full Stack Developer"],
+      },
       {
         id: 1,
         title: "Geolect 🎤",
@@ -79,7 +91,7 @@ const Workcomp = () => {
         id: 6,
         title: "Work Tools 🛠️",
         description:
-          "A tool to manage my portfolio website. I used ReactJS, TailwindCSS, and NextJS to build this website.",
+          "A tool to automate some of my work. I used Python, Puppeteer, and Pandas to build this tool.",
         image: tools,
         link: "https://github.com/xjex/Work-Tools",
         tags: ["Scraping", "Pandas", "Python", "Puppeteer", "Tools"],
@@ -90,7 +102,7 @@ const Workcomp = () => {
         id: 5,
         title: "Admin Portal Portfolio ",
         description:
-          "A tool to manage my portfolio website. I used ReactJS, TailwindCSS, and NextJS to build this website.",
+          "A tool to manage my portfolio website. I used ReactJS, TailwindCSS, and NextJS 13 to build this website.",
         image: inprogress,
         link: "https://portfolio-admin-portal-plum.vercel.app/",
         tags: ["Full Stack", "Supabase", "Vite", "React", "TailwindCSS"],

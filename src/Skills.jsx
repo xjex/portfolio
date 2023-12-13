@@ -195,7 +195,7 @@ const Skills = () => {
       <h1 class="text-3xl text-center font-bold text-white">Skills 🔨</h1>
 
       {/* Web Dev */}
-      <div className="flex flex-wrap justify-center flex-col-2 xl:flex-row xl:justify-center xl:grid-rows-2  md:flex-col">
+      <div className="flex flex-wrap justify-center flex-col-4 xl:flex-row xl:justify-center xl:grid-rows-2  md:flex-col">
         <div className="flex items-center justify-center pb-5 pt-10 transition hover:-translate-y-3">
           <section className="w-full p-10 rounded-xl max-w-2xl shadow-lg shadow-gray-800 bg-white m-5 ">
             <header className="flex items-center">
