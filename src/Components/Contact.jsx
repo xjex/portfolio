@@ -6,68 +6,12 @@ import Alert from "./Alert";
 import OpenMailer from "./Hooks/OpenMailer";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
 const Contact = (props) => {
-  const [value, setValue] = useState("");
-  const [allowSend, setAllowSend] = useState(false);
+  const [email, setEValue] = useState(null);
+  const [name, setNValue] = useState(null);
+  const [phone, setPValue] = useState(null);
+  const [message, setMValue] = useState(null);
+  const [allowSend, setAllowSend] = useState(true);
   const env = import.meta.env;
-
-  const onHCaptchaChange = (token) => {
-    setValue("h-captcha-response", token);
-
-    if (token === "") {
-      alert("Please verify you are not a robot");
-    } else {
-      setAllowSend(true);
-    }
-
-    console.log("token", token);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    if (!allowSend) {
-      alert("Please verify you are not a robot");
-    } else {
-      console.log(event.preventDefault());
-      const form = event.target;
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
-
-      const formData = new FormData(form);
-      const object = {};
-      formData.forEach((value, key) => {
-        object[key] = value;
-      });
-      //console.log(object);
-      const json = JSON.stringify(object);
-
-      form.reset();
-      props.toggleMail();
-
-      fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: json,
-      })
-        .then(async (response) => {
-          let json = await response.json();
-          if (response.status === 200) {
-            console.log("Success: ", json.message);
-            alert("Success:" + json.message);
-          } else {
-            console.error("Error:", json.message);
-          }
-        })
-        .catch((error) => {
-          console.error("Error:", error);
-        });
-    }
-  };
 
   const submitColor = () => {
     if (allowSend) {
@@ -90,14 +34,7 @@ const Contact = (props) => {
           <h3 class="text-lg text-white">Hello 👋</h3>
         </div>{" "}
         <div class="bg-gray-50 flex-grow p-6">
-          <form
-            action="https://api.web3forms.com/submit"
-            method="POST"
-            id="form"
-            class="needs-validation"
-            noValidate
-            onSubmit={handleSubmit}
-          >
+          <form action="https://api.web3forms.com/submit" method="POST">
             <input
               type="hidden"
               name="apikey"
@@ -133,7 +70,7 @@ const Contact = (props) => {
                 id="full_name"
                 placeholder="Name"
                 required
-                class="hover:ea w-full px-3 py-2 bg-white placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
+                class="hover:ea w-full px-3 py-2  text-black bg-white placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
               />
             </div>
 
@@ -150,7 +87,7 @@ const Contact = (props) => {
                 id="email"
                 placeholder="Email Address"
                 required
-                class="w-full px-3 py-2 bg-white placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
+                class="w-full px-3 py-2 text-black bg-white placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
               />
               {/* <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
                 Please provide a valid email address.
@@ -169,7 +106,7 @@ const Contact = (props) => {
                 name="phone"
                 id="phone"
                 placeholder="Phone Number"
-                class="w-full px-3 py-2 bg-white placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
+                class="w-full px-3 py-2  text-black bg-white placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
               />
             </div>
 
@@ -186,19 +123,11 @@ const Contact = (props) => {
                 id="message"
                 placeholder="Your Message"
                 required
-                class="w-full px-3 py-2 bg-white placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
+                class="w-full px-3 py-2  text-black bg-white placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
               ></textarea>
               {/* <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
                 Please provide a message.
               </div> */}
-
-              <div class="mb-4"></div>
-
-              <div class="mb-4"></div>
-              <HCaptcha
-                sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"
-                onVerify={onHCaptchaChange}
-              />
               <button
                 type="submit"
                 class={`w-full px-3 py-4 transition ease-in-out delay-150 rounded-xl text-white  ${submitColor()} focus:outline-none   `}
