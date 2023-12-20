@@ -2,7 +2,7 @@ import React, { Component, useRef, useEffect } from "react";
 import { FaLinkedin, FaTwitter, FaGithub, FaFacebook } from "react-icons/fa";
 import profileimg from "./assets/Profile2.png";
 import { Link } from "react-router-dom";
-
+import supabase from "./lib/helper/supabaseClient";
 const Home = (props) => {
   const handleClickScroll = () => {
     const element = document.getElementById("timeline");
@@ -10,6 +10,35 @@ const Home = (props) => {
       // 👇 Will scroll smoothly to the top of the next section
       element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
+  };
+
+  const downloadCV = async () => {
+    const { data, error } = await supabase.storage
+      .from("portfolio")
+      .download("public/Xavier-Joseph-Manaloto.pdf");
+    if (error) {
+      console.log(error);
+    }
+    if (data) {
+      console.log(data);
+    }
+
+    const date = new Date();
+    //remove day and time
+    const dateformat = date.toISOString().slice(0, 10);
+
+    const fileName = `Xavier-Joseph-Manaloto-${dateformat}.pdf`;
+    //download data
+    const url = window.URL.createObjectURL(new Blob([data]));
+    const link = document.createElement("a");
+
+    link.href = url;
+    link.setAttribute("download", fileName);
+    document.body.appendChild(link);
+    link.click();
+
+    //clean up
+    link.parentNode.removeChild(link);
   };
 
   return (
@@ -33,11 +62,17 @@ const Home = (props) => {
 
           <div>
             <div class="relative">
-              <button
+              {/* <button
                 onClick={props.toggleMail}
                 class="  transition ease-in-out delay-150 bg-blue-500 px-8 py-2 mt-8 rounded-2xl text-gray-100 font-semibold uppercase tracking-wide  hover:-translate-y-1  hover:bg-indigo-500 duration-300 ..."
               >
                 Contact Me
+              </button> */}
+              <button
+                onClick={downloadCV}
+                class="  transition ease-in-out delay-150 bg-blue-500 px-8 py-2 mt-8 rounded-2xl text-gray-100 font-semibold uppercase tracking-wide  hover:-translate-y-1  hover:bg-indigo-500 duration-300 ..."
+              >
+                Download CV
               </button>
             </div>
           </div>
