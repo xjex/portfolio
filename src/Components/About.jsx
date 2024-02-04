@@ -1,6 +1,6 @@
 import React from "react";
 import Footers from "./Footers";
-import profile from "../Assets/Profile2.png";
+
 const About = () => {
   return (
     <div>
@@ -48,7 +48,9 @@ const About = () => {
 
               <img
                 class="relative w-full xl:max-w-lg xl:mx-auto 2xl:origin-bottom 2xl:scale-110"
-                src={profile}
+                src={
+                  "https://cdn.rareblocks.xyz/collection/celebration/images/team/1/business-woman.png"
+                }
                 alt=""
               />
             </div>
