@@ -24,7 +24,7 @@ const Landing = () => {
   };
 
   return (
-    <div class=" bg-gradient-to-br from-blue-500 to-red-700">
+    <div class=" bg-gradient-to-br from-blue-500 to-red-700 ">
       <Home toggleMail={toggleMail} />
 
       {/* <div id="projects">

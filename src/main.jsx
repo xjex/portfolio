@@ -13,6 +13,7 @@ import Blog from "./Blog";
 import Nav from "./Components/Nav";
 import BlogContent from "./BlogContent";
 import OpenMailer from "./Components/Hooks/OpenMailer";
+import About from "./Components/About";
 
 const router = createBrowserRouter([
   {
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/about",
-    element: <div>About</div>,
+    element: <About />,
   },
   {
     path: "/contact",
