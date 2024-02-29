@@ -35,7 +35,7 @@ const Timeline = () => {
         duration: "2021",
         organization: "Stacktrek",
         status: "job",
-        jobStatus: "current",
+        jobStatus: "c",
         link: "https://stacktrek.com/",
       },
       {
