@@ -1,140 +1,190 @@
 import React from "react";
-
+import { useState, useEffect } from "react";
+import { FaBriefcase, FaGraduationCap } from "react-icons/fa6";
 const Timeline = () => {
+  const getDate = (date) => {
+    const currentDate = new Date();
+    const startDate = new Date(date);
+
+    let yearDiff = currentDate.getFullYear() - startDate.getFullYear();
+    let monthDiff = currentDate.getMonth() - startDate.getMonth();
+
+    if (monthDiff < 0) {
+      yearDiff--;
+      monthDiff += 12;
+    }
+
+    if (yearDiff === 0 && monthDiff === 0) {
+      return `${yearDiff} years`;
+    } else if (yearDiff === 0 && monthDiff !== 0) {
+      return `${monthDiff} months`;
+    } else if (yearDiff !== 0 && monthDiff === 0) {
+      return `${yearDiff} years`;
+    } else if (yearDiff !== 0 && monthDiff !== 0) {
+      return `${yearDiff} years, ${monthDiff} months`;
+    }
+  };
+
+  const [timeline, setTimeline] = useState({
+    timeline: [
+      {
+        id: 5,
+        title: "Content Creator",
+        description:
+          "I create technical contents, such as Full stack learning materials, Programming Challenges",
+        duration: "2021",
+        organization: "Stacktrek",
+        status: "job",
+        jobStatus: "c",
+        link: "https://stacktrek.com/",
+      },
+      {
+        id: 5,
+        title: "Video Editor",
+        description:
+          "I create Course Videos, Advertisements, and Vlogs and Reels",
+        organization: "Philrad Digital Advertising",
+        duration: " Feb 2021 - May 2021",
+        jobStatus: "pass",
+        status: "job",
+        link: "https://philiprad.com/",
+      },
+      {
+        id: 5,
+        title: "Quality Assurance Engineer",
+        description:
+          "Testing the integrity of the app using various methods of software testing(Manual)",
+        duration: "Mar 2020 - Feb 2021",
+        organization: "Pythomy",
+        jobStatus: "past",
+        status: "job",
+        link: "https://play.google.com/store/apps/details?id=io.ionic.starter20&hl=en&gl=US",
+      },
+      {
+        id: 5,
+        title: "Graduated from college",
+        description:
+          "Testing the integrity of the app using various methods of software testing(Manual)",
+        duration: "2016 - 2020",
+        organization: "Gordon College",
+        jobStatus: "past",
+        status: "school",
+        link: "https://www.facebook.com/GordonCollegeCcs",
+      },
+      {
+        id: 5,
+        title:
+          "Fourth Year Internship | Web Developer and Quality Assurance Engineer",
+        description:
+          "Website Development and Maintenance Integration of controllers Quality testing for solar panel software controllers",
+        duration: "Feb 2020 - Apr 2020",
+        jobStatus: "past",
+        status: "school",
+        organization: "BandaSolart PI Inc.",
+        link: "https://www.bandasolar.com/",
+      },
+      {
+        id: 5,
+        title: "Second Year Internship | Social Media Manager",
+        description: "Social Media Management and Marketing",
+        duration: "Jun 2017 - Nov 2017",
+        organization: "Gladness Staffing Services",
+        jobStatus: "past",
+        status: "school",
+        link: "https://www.facebook.com/gladnessstaffing/",
+      },
+    ],
+  });
+
+  const status = (stat) => {
+    if (stat == "job") {
+      return <FaBriefcase />;
+    } else if (stat == "school") {
+      return <FaGraduationCap />;
+    }
+  };
+
+  const jobStat = (stat) => {
+    if (stat != "current") {
+      return "hidden";
+    } else {
+      return "inline-flex";
+    }
+  };
+
   return (
-    <div class="w-10/12 md:w-7/12 lg:6/12 mx-auto relative py-20  ">
-      <h1 class="text-3xl text-center font-bold text-white">Timeline ⌚</h1>
-      <div class="bg-white p-10 rounded-3xl mt-10">
-        <div class="border-l-2 mt-10 ">
-          {/* <!-- Card 1 --> */}
-          <div class="transform transition cursor-pointer hover:-translate-y-2 ml-10 relative flex items-center px-6 py-4 bg-blue-600 text-white rounded-2xl mb-10 flex-col md:flex-row space-y-4 md:space-y-0">
-            {/* <!-- Dot Follwing the Left Vertical Line --> */}
-            <div class="w-5 h-5 bg-blue-600 absolute -left-10 transform -translate-x-2/4 rounded-full z-10 mt-2 md:mt-0"></div>
+    <div class="w-10/12 md:w-6/12  mx-auto relative py-20  ">
+      <h1 class="text-3xl text-center font-bold pb-10 text-white">
+        Timeline ⌚
+      </h1>
 
-            {/* <!-- Line that connecting the box with the vertical line --> */}
-            <div class="w-10 h-1 bg-blue-300 absolute -left-10 z-0"></div>
+      <div class="bg-white p-10 rounded-2xl  shadow-2xl transition-shadow  shadow-gray-800">
+        <div class=" ">
+          <div class="bg-white">
+            <div class=" mx-auto p-8">
+              <div class="flow-root">
+                <ul class="-mb-5 ">
+                  {timeline.timeline.map((post) => {
+                    return (
+                      <li>
+                        <div class=" relative pb-8">
+                          <span
+                            class=" absolute top-5 left-5 -ml-px h-full w-0.5 bg-gray-200"
+                            aria-hidden="true"
+                          ></span>
+                          <div class="relative flex items-start space-x-3">
+                            <div>
+                              <div class="relative px-1 ">
+                                <div class="h-8 w-8 bg-blue-500 rounded-full ring-8 ring-white text-white flex items-center justify-center">
+                                  {status(post.status)}
+                                </div>
+                              </div>
+                            </div>
+                            <div class=" bg-blue-200 hover:-translate-y-3 transition min-w-0 flex-1 py-0   p-5 rounded-lg">
+                              <div class="text-md text-gray-500 ">
+                                <div>
+                                  <a
+                                    href={post.link}
+                                    target="_blank"
+                                    class=" font-semibold text-gray-800 mr-2 "
+                                  >
+                                    {post.title}
+                                  </a>
 
-            {/* <!-- Content that showing in the box --> */}
-            <div class="flex-auto">
-              <h1 class="text-lg">May 31, 2021 - Present </h1>
-              <h1 class="text-xl font-bold">Technical Content Creator</h1>
-              <h3>StackTrek</h3>
+                                  <a
+                                    href="#"
+                                    class={`my-0.5 relative inline-flex ${jobStat(
+                                      post.jobStatus
+                                    )}   items-center bg-white rounded-full border border-gray-300 px-3 py-0.5 text-sm`}
+                                  >
+                                    <div class="absolute  flex-shrink-0 flex items-center justify-center">
+                                      <span
+                                        class="h-1.5 w-1.5 rounded-full bg-green-500"
+                                        aria-hidden="true"
+                                      ></span>
+                                    </div>
+                                    <div class="ml-3.5 font-medium text-gray-900">
+                                      Present
+                                    </div>
+                                  </a>
+                                  <p></p>
+                                </div>
+                                <span class="whitespace-wrap text-sm overflow-y-auto">
+                                  {post.organization} | {post.duration}
+                                </span>
+                              </div>
+                              <div class="mt-2 text-gray-700  text-sm overflow-y-auto">
+                                {post.description}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
             </div>
-            <span class=" bg-green-500 text-gray-900 text-sm font-medium mr-2 px-2.5 py-0.5 rounded">
-              Present
-            </span>
-
-            {/* <a href="#" class="text-center text-white hover:text-gray-300">
-            Download materials
-          </a> */}
-          </div>
-
-          {/* <!-- Card 2 --> */}
-          <div class="transform transition cursor-pointer hover:-translate-y-2 ml-10 relative flex items-center px-6 py-4 bg-pink-600 text-white rounded-2xl mb-10 flex-col md:flex-row space-y-4 md:space-y-0">
-            {/* <!-- Dot Follwing the Left Vertical Line --> */}
-            <div class="w-5 h-5 bg-pink-600 absolute -left-10 transform -translate-x-2/4 rounded-full z-10 mt-2 md:mt-0"></div>
-
-            {/* <!-- Line that connecting the box with the vertical line --> */}
-            <div class="w-10 h-1 bg-pink-300 absolute -left-10 z-0"></div>
-
-            {/* <!-- Content that showing in the box --> */}
-            <div class="flex-auto">
-              <h1 class="text-lg">February 2021 - May 2021</h1>
-              <h1 class="text-xl font-bold">Part-Time Video Editor</h1>
-              <h3>PhilRad Digital Advertising</h3>
-            </div>
-            <p class="text-center text-white hover:text-gray-300"> 4 months</p>
-            {/* <a href="#" class="text-center text-white hover:text-gray-300">
-            Download materials
-          </a> */}
-          </div>
-
-          {/* <!-- Card 3 --> */}
-          <div class="transform transition cursor-pointer hover:-translate-y-2 ml-10 relative flex items-center px-6 py-4 bg-green-600 text-white rounded-2xl mb-10 flex-col md:flex-row space-y-4 md:space-y-0">
-            {/* <!-- Dot Follwing the Left Vertical Line --> */}
-            <div class="w-5 h-5 bg-green-600 absolute -left-10 transform -translate-x-2/4 rounded-full z-10 mt-2 md:mt-0"></div>
-
-            {/* <!-- Line that connecting the box with the vertical line --> */}
-            <div class="w-10 h-1 bg-green-300 absolute -left-10 z-0"></div>
-
-            {/* <!-- Content that showing in the box --> */}
-            <div class="flex-auto">
-              <h1 class="text-lg">March 2020 - Feb 2021</h1>
-              <h1 class="text-xl font-bold">Quality Assurance Engineer</h1>
-              <h3>Pythomy</h3>
-            </div>
-            <p class="text-center text-white hover:text-gray-300"> 1 year</p>
-            {/* <a href="#" class="text-center text-white hover:text-gray-300">
-            Download materials
-          </a> */}
-          </div>
-
-          {/* <!-- Card 4 --> */}
-          <div class="transform transition cursor-pointer hover:-translate-y-2 ml-10 relative flex items-center px-6 py-4 bg-red-600 text-white rounded-2xl mb-10 flex-col md:flex-row">
-            {/* <!-- Dot Follwing the Left Vertical Line --> */}
-            <div class="w-5 h-5 bg-red-600 absolute -left-10 transform -translate-x-2/4 rounded-full z-10 -mt-2 md:mt-0"></div>
-
-            {/* <!-- Line that connecting the box with the vertical line --> */}
-            <div class="w-10 h-1 bg-red-300 absolute -left-10 z-0"></div>
-
-            {/* <!-- Content that showing in the box --> */}
-            <div class="flex-auto">
-              <h1 class="text-lg">August 2016 - November 2020</h1>
-              <h1 class="text-xl font-bold">
-                Graduated in Bachelor of Science in Computer Science 🎓
-              </h1>
-
-              <h3>Gordon College | Olongapo City</h3>
-            </div>
-            <p class="text-center text-white hover:text-gray-300"> 4 years</p>
-            {/* <a href="#" class="text-center text-white hover:text-gray-300">
-            Download materials
-          </a> */}
-          </div>
-
-          {/* <!-- Card 5 --> */}
-          <div class="transform transition cursor-pointer hover:-translate-y-2 ml-10 relative flex items-center px-6 py-4 bg-purple-600 text-white rounded-2xl mb-10 flex-col md:flex-row space-y-4 md:space-y-0">
-            {/* <!-- Dot Follwing the Left Vertical Line --> */}
-            <div class="w-5 h-5 bg-purple-600 absolute -left-10 transform -translate-x-2/4 rounded-full z-10 mt-2 md:mt-0"></div>
-
-            {/* <!-- Line that connecting the box with the vertical line --> */}
-            <div class="w-10 h-1 bg-purple-300 absolute -left-10 z-0"></div>
-
-            {/* <!-- Content that showing in the box --> */}
-            <div class="flex-auto">
-              <h1 class="text-lg">February 2020 - April 2020</h1>
-              <h1 class="text-xl font-bold">
-                Fourth Year Internship | Web Developer and Quality Assurance
-                Engineer
-              </h1>
-              <h3>BandaSolart PI Inc.</h3>
-            </div>
-            <p class="text-center text-white hover:text-gray-300"> 3 months</p>
-            {/* <a href="#" class="text-center text-white hover:text-gray-300">
-            Download materials
-          </a> */}
-          </div>
-
-          {/* <!-- Card 6 --> */}
-          <div class="transform transition cursor-pointer hover:-translate-y-2 ml-10 relative flex items-center px-6 py-4 bg-yellow-600 text-white rounded-2xl mb-10 flex-col md:flex-row">
-            {/* <!-- Dot Follwing the Left Vertical Line --> */}
-            <div class="w-5 h-5 bg-yellow-600 absolute -left-10 transform -translate-x-2/4 rounded-full z-10 -mt-2 md:mt-0"></div>
-
-            {/* <!-- Line that connecting the box with the vertical line --> */}
-            <div class="w-10 h-1 bg-yellow-300 absolute -left-10 z-0"></div>
-
-            {/* <!-- Content that showing in the box --> */}
-            <div class="flex-auto">
-              <h1 class="text-lg">June 2017 - November 2017</h1>
-              <h1 class="text-xl font-bold">
-                Second Year Internship | Social Media Manager
-              </h1>
-              <h3>Gladness Staffing Services</h3>
-            </div>
-            <p class="text-center text-white hover:text-gray-300"> 3 months</p>
-            {/* <a href="#" class="text-center text-white hover:text-gray-300">
-            Download materials
-          </a> */}
           </div>
         </div>
       </div>

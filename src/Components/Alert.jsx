@@ -3,13 +3,13 @@ import React from "react";
 const Alert = () => {
   return (
     <div
-      class="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md"
+      class="bg-orange-100 border-t-4 border-orange-500 rounded-b text-red-900 px-4 py-3 shadow-md"
       role="alert"
     >
       <div class="flex">
         <div class="py-1">
           <svg
-            class="fill-current h-6 w-6 text-teal-500 mr-4"
+            class="fill-current h-6 w-6 text-red-500 mr-4"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
           >
@@ -17,10 +17,11 @@ const Alert = () => {
           </svg>
         </div>
         <div>
-          <p class="font-bold">Website in progress</p>
+          <p class="font-bold">This part is in progress.</p>
+
           <p class="text-sm">
-            Some of the functions may not work, you can contact me via button
-            below
+            Some of the functions may not work below. Feel free to browse my
+            page.
           </p>
         </div>
       </div>

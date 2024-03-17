@@ -12,6 +12,8 @@ import { Analytics } from "@vercel/analytics/react";
 import Blog from "./Blog";
 import Nav from "./Components/Nav";
 import BlogContent from "./BlogContent";
+import OpenMailer from "./Components/Hooks/OpenMailer";
+import About from "./Components/About";
 
 const router = createBrowserRouter([
   {
@@ -20,11 +22,15 @@ const router = createBrowserRouter([
   },
   {
     path: "/about",
-    element: <div>About</div>,
+    element: <About />,
   },
   {
     path: "/contact",
-    element: <div>Contact</div>,
+    element: (
+      <div>
+        <Error />
+      </div>
+    ),
   },
   {
     path: "/projects",
@@ -32,7 +38,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/resume",
-    element: <div>Resume</div>,
+    element: (
+      <div>
+        <Error />
+      </div>
+    ),
   },
   {
     path: "/blogs",
@@ -48,7 +58,6 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Analytics />
-    <Contact />
 
     <RouterProvider router={router} />
   </React.StrictMode>

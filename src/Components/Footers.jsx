@@ -109,7 +109,7 @@ const Footers = () => {
                 class="w-full rounded-full border-gray-200 bg-gray-100 p-4 pe-32 text-sm font-medium"
                 id="email"
                 type="email"
-                placeholder="john@doe.com"
+                placeholder="your@email.com"
                 onChange={(e) => setEmail(e.target.value)}
               />
 

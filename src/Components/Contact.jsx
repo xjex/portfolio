@@ -1,64 +1,23 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaFacebookMessenger } from "react-icons/fa";
 import { IconContext } from "react-icons";
 import { FaEnvelope, FaTimes } from "react-icons/fa";
 import Alert from "./Alert";
-const Contact = () => {
-  //icon context
-  const [isClicked, setIsClicked] = useState(false);
-
+import OpenMailer from "./Hooks/OpenMailer";
+import HCaptcha from "@hcaptcha/react-hcaptcha";
+const Contact = (props) => {
+  const [email, setEValue] = useState(null);
+  const [name, setNValue] = useState(null);
+  const [phone, setPValue] = useState(null);
+  const [message, setMValue] = useState(null);
+  const [allowSend, setAllowSend] = useState(true);
   const env = import.meta.env;
 
-  const handleClick = () => {
-    if (!isClicked) {
-      setIsClicked(true);
-    } else {
-      setIsClicked(false);
+  const submitColor = () => {
+    if (allowSend) {
+      return "bg-green-500 focus:bg-indigo-600  hover:bg-indigo-500 hover:-translate-y-1 ";
     }
-  };
-
-  const [open, setOpen] = useState(false);
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    const form = event.target;
-    if (!form.checkValidity()) {
-      form.reportValidity();
-      return;
-    }
-
-    const formData = new FormData(form);
-    const object = {};
-    formData.forEach((value, key) => {
-      object[key] = value;
-    });
-    //console.log(object);
-    const json = JSON.stringify(object);
-
-    form.reset();
-    setOpen(false);
-
-    fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: json,
-    })
-      .then(async (response) => {
-        let json = await response.json();
-        if (response.status === 200) {
-          console.log("Success: ", json.message);
-          alert("Success:" + json.message);
-        } else {
-          console.error("Error:", json.message);
-        }
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
+    return " shake bg-red-500  focus:bg-orange-600  hover:bg-orange-500";
   };
 
   return (
@@ -66,23 +25,16 @@ const Contact = () => {
       <div
         id="w3f__widget--content"
         class={
-          open
-            ? " fixed flex flex-col z-50 bottom-[100px] top-0 right-0 h-auto left-0 sm:top-auto sm:right-5 sm:left-auto h-[calc(100%-95px)] w-full sm:w-[350px] overflow-auto min-h-[250px] sm:h-[600px] border border-gray-300 bg-white shadow-2xl rounded-md "
+          props.stat
+            ? " card fixed flex flex-col z-50 bottom-[100px] top-0 right-0  left-0 sm:top-auto sm:right-5 sm:left-auto h-[calc(100%-95px)] w-full sm:w-[350px] overflow-auto min-h-[250px] sm:h-[600px] border border-gray-300 bg-white shadow-2xl rounded-md "
             : "hidden "
         }
       >
         <div class="flex p-5 flex-col justify-center items-center h-32 bg-indigo-600">
-          <h3 class="text-lg text-white">Talk To Me</h3>
+          <h3 class="text-lg text-white">Hello 👋</h3>
         </div>{" "}
         <div class="bg-gray-50 flex-grow p-6">
-          <form
-            action="https://api.web3forms.com/submit"
-            method="POST"
-            id="form"
-            class="needs-validation"
-            noValidate
-            onSubmit={handleSubmit}
-          >
+          <form action="https://api.web3forms.com/submit" method="POST">
             <input
               type="hidden"
               name="apikey"
@@ -110,15 +62,15 @@ const Contact = () => {
                 htmlFor="full_name"
                 class="block mb-2 text-sm text-gray-600 dark:text-gray-400"
               >
-                Full Name
+                Full Name / Company Name
               </label>
               <input
                 type="text"
                 name="name"
                 id="full_name"
-                placeholder="John Doe"
+                placeholder="Name"
                 required
-                class="hover:ea w-full px-3 py-2 bg-white placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
+                class="hover:ea w-full px-3 py-2  text-black bg-white placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
               />
             </div>
 
@@ -135,7 +87,7 @@ const Contact = () => {
                 id="email"
                 placeholder="Email Address"
                 required
-                class="w-full px-3 py-2 bg-white placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
+                class="w-full px-3 py-2 text-black bg-white placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
               />
               {/* <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
                 Please provide a valid email address.
@@ -154,7 +106,7 @@ const Contact = () => {
                 name="phone"
                 id="phone"
                 placeholder="Phone Number"
-                class="w-full px-3 py-2 bg-white placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
+                class="w-full px-3 py-2  text-black bg-white placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
               />
             </div>
 
@@ -166,24 +118,19 @@ const Contact = () => {
                 Message
               </label>
               <textarea
-                rows="2"
+                rows="4 "
                 name="message"
                 id="message"
                 placeholder="Your Message"
                 required
-                class="w-full px-3 py-2 bg-white placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
+                class="w-full px-3 py-2  text-black bg-white placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
               ></textarea>
               {/* <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
                 Please provide a message.
               </div> */}
-
-              <div class="mb-4"></div>
-
-              <div class="mb-4"></div>
-
               <button
                 type="submit"
-                class="w-full px-3 py-4 text-white bg-indigo-500 rounded-md focus:bg-indigo-600 focus:outline-none"
+                class={`w-full px-3 py-4 transition ease-in-out delay-150 rounded-xl text-white  ${submitColor()} focus:outline-none   `}
               >
                 Send Message
               </button>
@@ -194,11 +141,12 @@ const Contact = () => {
       <div className="flex items-center justify-center">
         <button
           id="w3f__widget--button"
-          className=" transition ease-in-out delay-150 hover:scale-110 duration-100 fixed bottom-5 right-5 z-50 w-14 h-14 text-white bg-indigo-600 rounded-full shadow-lg focus:outline-none flex items-center justify-center "
-          onClick={() => setOpen(!open)}
+          // transition ease-in-out delay-150 bg-blue-500 px-8 py-2 mt-8 rounded-2xl text-gray-100 font-semibold uppercase tracking-wide  hover:-translate-y-1  hover:bg-indigo-500 duration-300
+          className=" transition ease-in-out delay-150 hover:scale-110  fixed bottom-5 right-5 z-50 w-14 h-14 text-white rounded-full   hover:-translate-y-2 bg-blue-500 hover:bg-indigo-500 duration-300 shadow-lg focus:outline-none flex items-center justify-center "
+          onClick={props.toggleMail}
         >
           <IconContext.Provider value={{ size: "1.5em" }}>
-            {open ? <FaTimes /> : <FaEnvelope />}
+            {props.stat ? <FaTimes /> : <FaEnvelope />}
           </IconContext.Provider>
         </button>
       </div>
