@@ -28,14 +28,25 @@ const Timeline = () => {
   const [timeline, setTimeline] = useState({
     timeline: [
       {
+        id: 7,
+        title: "Web Developer",
+        description:
+          "Front end web development for ",
+        duration: "Mar 2024",
+        organization: "OnlySub.com",
+        status: "job",
+        jobStatus: "present",
+        link: "https://onlysub.com/",
+      },
+      {
         id: 5,
         title: "Content Creator",
         description:
           "I create technical contents, such as Full stack learning materials, Programming Challenges",
-        duration: "2021",
+        duration: "May 2021 - Mar 2024",
         organization: "Stacktrek",
         status: "job",
-        jobStatus: "c",
+        jobStatus: "past",
         link: "https://stacktrek.com/",
       },
       {
@@ -45,7 +56,7 @@ const Timeline = () => {
           "I create Course Videos, Advertisements, and Vlogs and Reels",
         organization: "Philrad Digital Advertising",
         duration: " Feb 2021 - May 2021",
-        jobStatus: "pass",
+        jobStatus: "past",
         status: "job",
         link: "https://philiprad.com/",
       },
