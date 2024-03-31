@@ -40,7 +40,7 @@ const Timeline = () => {
       },
       {
         id: 5,
-        title: "Content Creator",
+        title: "Software Engineer | Content Creator",
         description:
           "I create technical contents, such as Full stack learning materials, Programming Challenges",
         duration: "May 2021 - Mar 2024",
