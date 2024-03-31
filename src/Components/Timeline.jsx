@@ -31,7 +31,7 @@ const Timeline = () => {
         id: 7,
         title: "Web Developer",
         description:
-          "Front end web development for ",
+          "Front end web development",
         duration: "Mar 2024",
         organization: "OnlySub.com",
         status: "job",
