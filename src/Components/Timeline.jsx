@@ -35,7 +35,7 @@ const Timeline = () => {
         duration: "Mar 2024",
         organization: "OnlySub.com",
         status: "job",
-        jobStatus: "present",
+        jobStatus: "current",
         link: "https://onlysub.com/",
       },
       {
