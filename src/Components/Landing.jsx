@@ -14,6 +14,7 @@ import Workcomp from "./Workcomp";
 const Landing = () => {
   const [status, setStatus] = useState(false);
 
+
   //toggle contact form
   const toggleMail = () => {
     if (status) {
@@ -24,7 +25,10 @@ const Landing = () => {
   };
 
   return (
+    
     <div class=" bg-gradient-to-br from-blue-500 to-red-700 ">
+      
+
       <Home toggleMail={toggleMail} />
 
       {/* <div id="projects">
@@ -36,14 +40,14 @@ const Landing = () => {
       </div>
       <Skills />
       <Workcomp />
-      <Alert />
+     
 
       <Contact stat={status} toggleMail={toggleMail} />
 
-      <div id="blogs">
+      {/* <Alert /> <div id="blogs">
         <Portfolio />
-        {/* <Blog /> */}
-      </div>
+    
+      </div> */}
       <Footers />
     </div>
   );
