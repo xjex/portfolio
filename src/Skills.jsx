@@ -10,11 +10,15 @@ const Skills = () => {
         svg: "https://cdn.svgporn.com/logos/javascript.svg",
       },
       {
+        name: "TypeScript",
+        rating: 5.0,
+        svg: "https://cdn.svgporn.com/logos/typescript.svg"
+      },
+      {
         name: "Tailwind",
         rating: 6.0,
         svg: "https://cdn.svgporn.com/logos/tailwindcss-icon.svg",
       },
-
       {
         name: "React",
         rating: 5.0,

@@ -67,7 +67,7 @@ const Nav = () => {
   }, []);
 
   return (
-    <div class="bg-gray-700">
+    <div class="bg-gray-700 sticky">
       <nav class="relative px-4 py-4 flex justify-between items-center bg-white rounded-b-lg ">
         <a class="text-3xl font-bold leading-none" href="#">
           {"<Xavier />"}

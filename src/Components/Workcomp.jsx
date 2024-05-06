@@ -118,7 +118,8 @@ const Workcomp = () => {
         <h1 class="text-3xl text-center font-bold text-white">My Work 👷‍♂️</h1>
       </div>
 
-      <div class=" flex flex-wrap justify-center flex-col-2 xl:flex-row xl:justify-center xl:grid-rows-2  ">
+{/* Suggested code may be subject to a license. Learn more: ~LicenseLog:2730870949. */}
+      <div class=" flex flex-wrap justify-center flex-col-2 xl:flex-row xl:justify-center xl:grid-rows-2 mb-10  ">
         {projects.projects.map((post) => {
           return (
             // "bg-white shadow-md border transform transition cursor-pointer  hover:-translate-y-3 border-gray-200  rounded-lg max-w-sm mb-5
