@@ -10,7 +10,7 @@ import Portfolio from '../../Components/Blog-Components/BlogsV2';
 import Contact from '../../Components/Landing-Components/Contact';
 import Skills from '../../Components/Landing-Components/Skills';
 import Workcomp from '../../Components/Landing-Components/Workcomp';
-
+import Lion from '../../assets/lion.gif';
 const Landing = () => {
 	const [status, setStatus] = useState(false);
 
