@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { FaFacebookMessenger } from 'react-icons/fa';
+import { useState } from 'react';
+
 import { IconContext } from 'react-icons';
 import { FaEnvelope, FaTimes } from 'react-icons/fa';
 
@@ -23,23 +23,23 @@ const Contact = props => {
 		<div id='web3forms__widget'>
 			<div
 				id='w3f__widget--content'
-				class={
+				className={
 					props.stat
 						? ' card fixed flex flex-col z-50 bottom-[100px] top-0 right-0  left-0 sm:top-auto sm:right-5 sm:left-auto h-[calc(100%-95px)] w-full sm:w-[350px] overflow-auto min-h-[250px] sm:h-[600px] border border-gray-300 bg-white shadow-2xl rounded-md '
 						: 'hidden '
 				}>
-				<div class='flex p-5 flex-col justify-center items-center h-32 bg-indigo-600'>
-					<h3 class='text-lg text-white'>Hello 👋</h3>
+				<div className='flex p-5 flex-col justify-center items-center h-32 bg-indigo-600'>
+					<h3 className='text-lg text-white'>Hello 👋</h3>
 				</div>{' '}
-				<div class='bg-gray-50 flex-grow p-6'>
+				<div className='bg-gray-50 flex-grow p-6'>
 					<form action='https://api.web3forms.com/submit' method='POST'>
 						<input type='hidden' name='apikey' value={env.VITE_WEB3FORMS_API_KEY} />
 						<input type='hidden' name='subject' value='New Submission from your Portfolio Website' />
 						<input type='checkbox' name='botcheck' style={{ display: 'none' }} />
 
 						<input type='hidden' name='from_name' value='Portfolio User Message'></input>
-						<div class='mb-4'>
-							<label htmlFor='full_name' class='block mb-2 text-sm text-gray-600 dark:text-gray-400'>
+						<div className='mb-4'>
+							<label htmlFor='full_name' className='block mb-2 text-sm text-gray-600 dark:text-gray-400'>
 								Full Name / Company Name
 							</label>
 							<input
@@ -48,12 +48,12 @@ const Contact = props => {
 								id='full_name'
 								placeholder='Name'
 								required
-								class='hover:ea w-full px-3 py-2  text-black bg-white placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300'
+								className='hover:ea w-full px-3 py-2  text-black bg-white placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300'
 							/>
 						</div>
 
-						<div class='mb-4'>
-							<label htmlFor='email' class='block mb-2 text-sm text-gray-600 dark:text-gray-400'>
+						<div className='mb-4'>
+							<label htmlFor='email' className='block mb-2 text-sm text-gray-600 dark:text-gray-400'>
 								Email Address
 							</label>
 							<input
@@ -62,15 +62,15 @@ const Contact = props => {
 								id='email'
 								placeholder='Email Address'
 								required
-								class='w-full px-3 py-2 text-black bg-white placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300'
+								className='w-full px-3 py-2 text-black bg-white placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300'
 							/>
-							{/* <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
+							{/* <div className="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
                 Please provide a valid email address.
               </div> */}
 						</div>
 
-						<div class='mb-4'>
-							<label htmlFor='phone' class='text-sm text-gray-600 dark:text-gray-400'>
+						<div className='mb-4'>
+							<label htmlFor='phone' className='text-sm text-gray-600 dark:text-gray-400'>
 								Phone Number
 							</label>
 							<input
@@ -78,12 +78,12 @@ const Contact = props => {
 								name='phone'
 								id='phone'
 								placeholder='Phone Number'
-								class='w-full px-3 py-2  text-black bg-white placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300'
+								className='w-full px-3 py-2  text-black bg-white placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300'
 							/>
 						</div>
 
-						<div class='mb-4'>
-							<label htmlFor='message' class='text-sm text-gray-600 dark:text-gray-400'>
+						<div className='mb-4'>
+							<label htmlFor='message' className='text-sm text-gray-600 dark:text-gray-400'>
 								Message
 							</label>
 							<textarea
@@ -92,13 +92,13 @@ const Contact = props => {
 								id='message'
 								placeholder='Your Message'
 								required
-								class='w-full px-3 py-2  text-black bg-white placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300'></textarea>
-							{/* <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
+								className='w-full px-3 py-2  text-black bg-white placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300'></textarea>
+							{/* <div className="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
                 Please provide a message.
               </div> */}
 							<button
 								type='submit'
-								class={`w-full px-3 py-4 transition ease-in-out delay-150 rounded-xl text-white  ${submitColor()} focus:outline-none   `}>
+								className={`w-full px-3 py-4 transition ease-in-out delay-150 rounded-xl text-white  ${submitColor()} focus:outline-none   `}>
 								Send Message
 							</button>
 						</div>
