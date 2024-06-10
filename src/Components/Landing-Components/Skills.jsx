@@ -201,7 +201,7 @@ const Skills = () => {
 			{/* Web Dev */}
 			<div className='flex flex-wrap justify-center flex-col-4 xl:flex-row xl:justify-center xl:grid-rows-2  md:flex-col'>
 				<div className='flex items-center justify-center pb-5 pt-10 transition hover:-translate-y-3'>
-					<section className='w-full p-10 rounded-xl max-w-2xl shadow-lg shadow-gray-800 bg-white m-5 '>
+					<section className='w-full p-8 rounded-xl max-w-2xl shadow-lg shadow-gray-800 bg-white m-5 '>
 						<header className='flex items-center'>
 							<h3 className='font-medium text-lg  text-black'>Web Developement 👓</h3>
 						</header>
@@ -248,7 +248,7 @@ const Skills = () => {
 
 				{/* Software Testing */}
 				<div className='flex items-center justify-center pb-5 pt-10 transition hover:-translate-y-3 '>
-					<section className='w-full p-10 rounded-xl max-w-2xl shadow-lg shadow-gray-800 bg-white m-5'>
+					<section className='w-full p-8 rounded-xl max-w-2xl shadow-lg shadow-gray-800 bg-white m-5'>
 						<header className='flex items-center'>
 							<h3 className='font-medium text-lg  text-black'>Software Testing 🧪</h3>
 						</header>
@@ -295,7 +295,7 @@ const Skills = () => {
 
 				{/* database */}
 				<div className='flex items-center justify-center pb-5 pt-10 transition hover:-translate-y-3 '>
-					<section className='w-full p-10 rounded-xl max-w-2xl shadow-lg shadow-gray-800 bg-white m-5'>
+					<section className='w-full p-8 rounded-xl max-w-2xl shadow-lg shadow-gray-800 bg-white m-5'>
 						<header className='flex items-center'>
 							<h3 className='font-medium text-lg  text-black'>Database 💾</h3>
 						</header>
@@ -342,7 +342,7 @@ const Skills = () => {
 
 				{/* programming languages */}
 				<div className='flex items-center justify-center pb-5 pt-10 transition hover:-translate-y-3'>
-					<section className='w-full p-10 rounded-xl max-w-2xl shadow-lg shadow-gray-800 bg-white m-5'>
+					<section className='w-full p-8 rounded-xl max-w-2xl shadow-lg shadow-gray-800 bg-white m-5'>
 						<header className='flex items-center'>
 							<h3 className='font-medium text-lg text-black'>Programming Languages 👨‍💻 </h3>
 						</header>
@@ -390,7 +390,7 @@ const Skills = () => {
 
 				{/* Adobe */}
 				<div className='flex items-center justify-center pb-5 pt-10 transition hover:-translate-y-3 '>
-					<section className='w-full p-10 rounded-xl max-w-2xl shadow-lg shadow-gray-800 bg-white m-5'>
+					<section className='w-full p-8 rounded-xl max-w-2xl shadow-lg shadow-gray-800 bg-white m-5'>
 						<header className='flex items-center'>
 							<h3 className='font-medium text-lg  text-black'>Adobe 🎨</h3>
 						</header>

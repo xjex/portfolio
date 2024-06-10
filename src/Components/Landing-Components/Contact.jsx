@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { FaFacebookMessenger } from 'react-icons/fa';
+import { useState } from 'react';
+
 import { IconContext } from 'react-icons';
 import { FaEnvelope, FaTimes } from 'react-icons/fa';
 

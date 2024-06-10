@@ -9,9 +9,21 @@ import portf from '../../assets/portf.png';
 import inprogress from '../../assets/inprogress.jpg';
 import tools from '../../assets/Worktools.jpg';
 import stick from '../../assets/Stickup.png';
+import onlysub from '../../assets/OnlySub-01.jpg';
 const Workcomp = () => {
 	const [projects, setProjects] = useState({
 		projects: [
+			{
+				id: 5,
+				title: 'OnlySub ',
+				description:
+					'A subscription based social media platform. I used ReactJS, TailwindCSS, and Next to maintain this website.',
+				image: onlysub,
+				link: 'https://onlysub.com/',
+				tags: ['TypeScript', 'NestJS', 'NextJS14', 'React', 'AntD', 'TailwindCSS', 'Monggo'],
+				status: 'Currently Working On',
+				job: ['Front end Developer', 'Designer']
+			},
 			{
 				id: 7,
 				title: 'Stick-up!📒',

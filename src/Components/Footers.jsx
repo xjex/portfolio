@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import React from 'react';
 import supabase from '../lib/helper/supabaseClient';
 import { useState } from 'react';

@@ -1,7 +1,6 @@
-import React, { Component, useRef, useEffect } from 'react';
+import React from 'react';
 import { FaLinkedin, FaTwitter, FaGithub, FaFacebook } from 'react-icons/fa';
 import profileimg from '../../assets/Profile2.png';
-import { Link } from 'react-router-dom';
 import supabase from '../../lib/helper/supabaseClient';
 const Home = props => {
 	const handleClickScroll = () => {
@@ -156,9 +155,9 @@ const Home = props => {
 				<div class='card bg-white font-semibold text-center rounded-3xl shadow-2xl shadow-gray-800 border p-10 max-w-xs mt-5'>
 					<img class='mb-3 w-50 h-50 rounded-full shadow-lg mx-auto scale-100' src={profileimg} />
 					<h1 class='text-lg text-gray-700'> Xavier Joseph Manaloto </h1>
-					<h3 class='text-sm text-gray-500 '> Content Creator </h3>
-					<h3 class='text-sm text-gray-400 '> StackTrek </h3>
-					<p class='text-xs text-gray-400 mt-4'> I create and manage technical contents </p>
+					<h3 class='text-sm text-gray-500 '> Front end developer </h3>
+					<h3 class='text-sm text-gray-400 '> OnlySub </h3>
+					<p class='text-xs text-gray-400 mt-4'> I create and main technical contents </p>
 					<p class='text-xs text-gray-400 '> I am a full stack developer </p>
 
 					{/* contact me */}

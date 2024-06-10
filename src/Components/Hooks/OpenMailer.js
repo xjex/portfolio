@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react';
-import React from 'react';
+import { useState } from 'react';
 
 const OpenMailer = () => {
 	const [open, setOpen] = useState(false);
