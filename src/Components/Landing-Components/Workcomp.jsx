@@ -126,7 +126,9 @@ const Workcomp = () => {
 					return (
 						// "bg-white shadow-md border transform transition cursor-pointer  hover:-translate-y-3 border-gray-200  rounded-lg max-w-sm mb-5
 						<Link to={post.link} target='_blank' rel='noopener noreferrer'>
-							<div class=' max-w-md overflow-hidden rounded-lg transition bg-white cursor-pointer shadow  hover:-translate-y-3  m-5 '>
+							<div
+								class=' max-w-md overflow-hidden rounded-lg transition bg-white cursor-pointer shadow  hover:-translate-y-3  m-5 '
+								key={post.id}>
 								<img
 									src={post.image}
 									class='aspect-video w-full h-56 w-50 object-cover object-top'

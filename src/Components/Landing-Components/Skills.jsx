@@ -196,7 +196,7 @@ const Skills = () => {
 
 	return (
 		<div className=''>
-			<h1 class='text-3xl text-center font-bold text-white'>Skills 🔨</h1>
+			<h1 className='text-3xl text-center font-bold text-white'>Skills 🔨</h1>
 
 			{/* Web Dev */}
 			<div className='flex flex-wrap justify-center flex-col-4 xl:flex-row xl:justify-center xl:grid-rows-2  md:flex-col'>

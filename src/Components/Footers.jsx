@@ -48,7 +48,7 @@ const Footers = () => {
 	};
 
 	return (
-		<footer aria-label='Site Footer' class='bg-white dark:bg-gray-700'>
+		<footer aria-label='Site Footer' className='bg-white dark:bg-gray-700'>
 			{showModal ? (
 				<>
 					<div className='justify-center items-center  flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none'>
@@ -85,21 +85,21 @@ const Footers = () => {
 					<div className='opacity-25 fixed inset-0 z-40 bg-black'></div>
 				</>
 			) : null}
-			<div class='mx-auto max-w-screen-xl px-4 pb-8 pt-16 sm:px-6 lg:px-8'>
-				<div class='mx-auto max-w-md'>
-					<strong class='block text-center text-xl font-bold text-gray-900 sm:text-3xl dark:text-white'>
+			<div className='mx-auto max-w-screen-xl px-4 pb-8 pt-16 sm:px-6 lg:px-8'>
+				<div className='mx-auto max-w-md'>
+					<strong className='block text-center text-xl font-bold text-gray-900 sm:text-3xl dark:text-white'>
 						Connect with me!
 					</strong>
 
-					<form class='mt-6' onSubmit={handleSubmit}>
-						<div class='relative max-w-lg'>
-							<label class='sr-only' for='email'>
+					<form className='mt-6' onSubmit={handleSubmit}>
+						<div className='relative max-w-lg'>
+							<label className='sr-only' for='email'>
 								{' '}
 								Email{' '}
 							</label>
 
 							<input
-								class='w-full rounded-full border-gray-200 bg-gray-100 p-4 pe-32 text-sm font-medium'
+								className='w-full rounded-full border-gray-200 bg-gray-100 p-4 pe-32 text-sm font-medium'
 								id='email'
 								type='email'
 								placeholder='your@email.com'
@@ -108,15 +108,15 @@ const Footers = () => {
 
 							<button
 								type='submit'
-								class='absolute end-1 top-1/2 -translate-y-1/2 rounded-full bg-blue-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-blue-700'>
+								className='absolute end-1 top-1/2 -translate-y-1/2 rounded-full bg-blue-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-blue-700'>
 								Connect
 							</button>
 						</div>
 					</form>
 				</div>
 
-				<div class='mt-16 border-t border-gray-100 pt-8'>
-					<p class='text-center text-xs/relaxed text-gray-500'>
+				<div className='mt-16 border-t border-gray-100 pt-8'>
+					<p className='text-center text-xs/relaxed text-gray-500'>
 						©2023. All rights reserved.
 						<br />
 						Created with: Vite | React | Tailwind CSS | Vercel | Web3email
