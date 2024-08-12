@@ -30,7 +30,7 @@ const Timeline = () => {
 		timeline: [
 			{
 				id: 7,
-				title: 'Front End Web Developer',
+				title: 'Front End Engineer',
 				description: 'Front end web development',
 				duration: 'Mar 2024',
 				organization: 'OnlySub.com',
@@ -52,7 +52,7 @@ const Timeline = () => {
 			{
 				id: 5,
 				title: 'Video Editor',
-				description: 'I create Course Videos, Advertisements, and Vlogs and Reels',
+				description: 'I create course videos, advertisements, and vlogs and reels',
 				organization: 'Philrad Digital Advertising',
 				duration: ' Feb 2021 - May 2021',
 				jobStatus: 'past',
@@ -71,8 +71,8 @@ const Timeline = () => {
 			},
 			{
 				id: 5,
-				title: 'Got my bachelor degree in Computer Science ',
-				description: 'Testing the integrity of the app using various methods of software testing(Manual)',
+				title: 'College Graduation',
+				description: 'Finished my degree in Computer Science in 2020',
 				duration: '2016 - 2020',
 				organization: 'Gordon College',
 				jobStatus: 'past',
@@ -81,7 +81,7 @@ const Timeline = () => {
 			},
 			{
 				id: 5,
-				title: 'Fourth Year Internship | Web Developer and Quality Assurance Engineer',
+				title: 'Fourth Year Internship ',
 				description:
 					'Website Development and Maintenance Integration of controllers Quality testing for solar panel software controllers',
 				duration: 'Feb 2020 - Apr 2020',
@@ -92,7 +92,7 @@ const Timeline = () => {
 			},
 			{
 				id: 5,
-				title: 'Second Year Internship | Social Media Manager',
+				title: 'Second Year Internship ',
 				description: 'Social Media Management and Marketing',
 				duration: 'Jun 2017 - Nov 2017',
 				organization: 'Gladness Staffing Services',
@@ -145,39 +145,44 @@ const Timeline = () => {
 															</div>
 														</div>
 
-														<div className=' bg-blue-200 hover:-translate-y-3 transition min-w-0 flex-1 py-0   p-5 rounded-lg'>
-															<div
-																className={`my-0.5 relative inline-flex ${jobStat(
-																	post.jobStatus
-																)}   items-center bg-white rounded-full border border-gray-300 px-3  text-sm `}>
-																<div className='absolute  flex-shrink-0 flex items-center justify-center'>
-																	<span
-																		className='h-1.5 w-1.5 rounded-full bg-green-500'
-																		aria-hidden='true'></span>
+														<div className=' bg-blue-200 hover:bg-blue-300 transition min-w-0 flex-1 py-0   p-5 rounded-lg'>
+															<div className='collapse collapse-arrow text-slate-500'>
+																<input type='checkbox' name='my-accordion-2' />
+
+																<div className='collapse-title  font-medium'>
+																	<div className='text-md text-gray-500 flex sm:justify-between justify-normal '>
+																		<a
+																			href={post.link}
+																			target='_blank'
+																			className=' font-semibold text-gray-800 mr-2 '>
+																			{post.title}
+																		</a>
+
+																		<div
+																			className={`my-0.5 relative inline-flex ${jobStat(
+																				post.jobStatus
+																			)}  items-center `}>
+																			<div className='badge badge-accent '>
+																				Current
+																			</div>
+																		</div>
+																	</div>
+																	<div className='text-sm text-gray-800 flex '>
+																		<span className='whitespace-wrap text-sm overflow-y-auto'>
+																			{post.organization}
+																		</span>
+																	</div>
+																	<span className='whitespace-wrap text-xs overflow-y-auto'>
+																		{post.duration}
+																	</span>
 																</div>
 
-																<div className='ml-3.5  text-gray-900 font-medium'>
-																	Current
+																<div className='collapse-content  '>
+																	<div className=' text-sm text-gray-800  p-3 bg-blue-100 rounded-lg'>
+																		<p className='text-sm'>{post.description}</p>
+																	</div>
 																</div>
 															</div>
-
-															<div className='text-md text-gray-500 '>
-																<div>
-																	<a
-																		href={post.link}
-																		target='_blank'
-																		className=' font-semibold text-gray-800 mr-2 '>
-																		{post.title}
-																	</a>
-																</div>
-																<span className='whitespace-wrap text-sm overflow-y-auto'>
-																	{post.organization} | {post.duration}
-																</span>
-															</div>
-
-															{/* <div className='mt-2 text-gray-700  text-sm overflow-y-auto'>
-																{post.description}
-															</div> */}
 														</div>
 													</div>
 												</div>

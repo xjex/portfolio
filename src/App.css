@@ -1,15 +1,27 @@
 .card {
-  animation: zoom-in-zoom-out 1s ease-out;
+	animation: zoom-in-zoom-out 1s ease-out;
 }
 
 @keyframes zoom-in-zoom-out {
-  0% {
-    transform: scale(0, 0);
-  }
-  50% {
-    transform: scale(1.1, 1.1);
-  }
-  75% {
-    transform: scale(1, 1);
-  }
+	0% {
+		transform: scale(1.4, 1.4);
+	}
+	50% {
+		transform: scale(0.9, 0.9);
+	}
+	60% {
+		transform: scale(1, 1);
+	}
+}
+
+.bottom-nav {
+	position: fixed; /* Keeps the nav fixed to the bottom */
+	top: 1; /* Aligns the nav to the bottom of the viewport */
+	left: 0; /* Stretches the nav to the left edge */
+	right: 0; /* Stretches the nav to the right edge */
+	z-index: 999; /* Ensures it's above other content */
+	display: flex;
+	align-items: center;
+	justify-content: space-around; /* Distributes nav items evenly */
+	padding: 10px 0; /* Adjust padding as needed */
 }

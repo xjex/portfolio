@@ -195,7 +195,7 @@ const Skills = () => {
 	};
 
 	return (
-		<div className=''>
+		<div className='text-center mx-auto relative py-20 p-10'>
 			<h1 className='text-3xl text-center font-bold text-white'>Skills 🔨</h1>
 
 			{/* Web Dev */}

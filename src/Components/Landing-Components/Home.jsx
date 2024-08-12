@@ -5,6 +5,7 @@ import supabase from '../../lib/helper/supabaseClient';
 const Home = props => {
 	const handleClickScroll = () => {
 		const element = document.getElementById('timeline');
+
 		if (element) {
 			// 👇 Will scroll smoothly to the top of the next section
 			element.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -155,10 +156,8 @@ const Home = props => {
 				<div className='card bg-white font-semibold text-center rounded-3xl shadow-2xl shadow-gray-800 border p-10 max-w-xs mt-5'>
 					<img className='mb-3 w-50 h-50 rounded-full shadow-lg mx-auto scale-100' src={profileimg} />
 					<h1 className='text-lg text-gray-700'> Xavier Joseph Manaloto </h1>
-					<h3 className='text-sm text-gray-500 '> Front end developer </h3>
-					<h3 className='text-sm text-gray-400 '> OnlySub </h3>
-					<p className='text-xs text-gray-400 mt-4'> I create and main technical contents </p>
-					<p className='text-xs text-gray-400 '> I am a full stack developer </p>
+					<h3 className='text-sm text-gray-500 '> Full Stack Developer </h3>
+					<h3 className='text-sm text-gray-400 '> </h3>
 
 					{/* contact me */}
 

@@ -116,8 +116,8 @@ const Workcomp = () => {
 
 	return (
 		<div>
-			<div id='Work' className='text-center p-10'>
-				<h1 class='text-3xl text-center font-bold text-white'>My Work 👷‍♂️</h1>
+			<div id='Work' className='text-center mx-auto relative py-20 '>
+				<h1 className='text-3xl text-center font-bold  text-white'>My Work 👷‍♂️</h1>
 			</div>
 
 			{/* Suggested code may be subject to a license. Learn more: ~LicenseLog:2730870949. */}
