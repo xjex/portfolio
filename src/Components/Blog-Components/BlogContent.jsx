@@ -94,7 +94,6 @@ const BlogContent = () => {
 		updateViews();
 		console.log('views updated');
 	}, 3000);
-	console.log(blog);
 
 	const [votes, setVotes] = useState(0);
 	const [availableVotes, setAvailableVotes] = useState(1);

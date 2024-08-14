@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 
 const Nav = () => {
 	const handleClickScroll = data => {
-		console.log('tite');
 		const element = document.getElementById(data);
 		if (element) {
 			// 👇 Will scroll smoothly to the top of the next section
