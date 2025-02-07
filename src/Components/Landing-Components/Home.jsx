@@ -52,8 +52,7 @@ const Home = props => {
 								</h2>
 
 								<p className='max-w-lg mt-3 text-xl sm:text-sm md:text-md lg:text-xl leading-relaxed text-gray-600 md:mt-8'>
-									I'm a software engineer based in the Philippines. With two years of experience under
-									my belt as a software engineer, I possess a robust skillset in web development,
+									I'm a software engineer based in the Philippines.  I possess a robust skillset in web development,
 									particularly in building high-performance, dynamic applications using Next.js.
 								</p>
 
