@@ -30,23 +30,23 @@ const Timeline = () => {
 		timeline: [
 			{
 				id: 8,
-				title: 'Front End Engineer',
-				description: 'Front end web development',
+				title: 'Software Engineer',
+				description: 'Software Development',
 				duration: 'October 2024',
-				organization: 'OnlySub.com',
+				organization: 'TristynTech.com',
 				status: 'job',
 				jobStatus: 'current',
-				link: 'https://onlysub.com/'
+				link: 'https://TristynTech.com/'
 			},
 			{
 				id: 8,
 				title: 'Fullstack Developer',
-				description: 'UmbraDigital',
+				description: 'Full stack developer',
 				duration: 'Aug 2024 - Nov 2024',
-				organization: 'OnlySub.com',
+				organization: 'UmbraDigital',
 				status: 'job',
 				jobStatus: 'past',
-				link: 'https://onlysub.com/'
+				link: 'https://UmbraDigital.com/'
 			},
 			{
 				id: 7,
